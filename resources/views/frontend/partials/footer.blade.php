@@ -1,231 +1,340 @@
-        <!-- main-footer -->
-        <footer class="main-footer">
-            @if(Request::is('/'))
-            <div class="footer-top bg-color-2">
-                <div class="auto-container">
-                    <div class="row clearfix">
-                        <div class="col-lg-4 col-md-6 col-sm-12 footer-column">
-                            <div class="footer-widget links-widget ml-70">
-                                <div class="widget-title">
-                                    <h3>القائمة</h3>
-                                </div>
-                                <div class="widget-content">
-                                    <ul class="links-list class">
-                                        <li class="uppercase {{ Request::is('/') ? 'underline' : '' }}">
-                                            <a href="{{ route('home') }}" class="grey-text text-lighten-3">الرئيسية</a>
-                                        </li>
-                                        <li class="uppercase {{ Request::is('property*') ? 'underline' : '' }}">
-                                            <a href="{{ route('property') }}" class="grey-text text-lighten-3">العقارات</a>
-                                        </li>
-                    
-                                        <li class="uppercase {{ Request::is('PRequests*') ? 'underline' : '' }}">
-                                            <a href="{{ route('PropertieRequest') }}" class="grey-text text-lighten-3">طلب عقار</a>
-                                        </li>
-                    
-                                        <li class="uppercase {{ Request::is('PMarketing*') ? 'underline' : '' }}">
-                                            <a href="{{ route('PropertiesMarkating') }}" class="grey-text text-lighten-3">تسويق عقار</a>
-                                        </li>
-                    
-                                        <li class="uppercase {{ Request::is('InfoForm*') ? 'underline' : '' }}">
-                                            <a href="{{ route('InfoForm') }}" class="grey-text text-lighten-3">حلول تمويلية</a>
-                                        </li>
-
-                                        <li class="uppercase {{ Request::is('blog*') ? 'underline' : '' }}">
-                                            <a href="{{ route('blog') }}" class="grey-text text-lighten-3">المدونة</a>
-                                        </li>
-                    
-                                        <li class="uppercase {{ Request::is('contact') ? 'underline' : '' }}">
-                                            <a href="{{ route('contact') }}" class="grey-text text-lighten-3">تواصل معنا</a>
-                                        </li>
-                                                        </ul>
-                                </div>
-
-
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6 col-sm-12 footer-column">
-                            <div class="footer-widget post-widget">
-                                <div class="widget-title">
-                                    <h3>العقارات الأخيرة</h3>
-                                </div>
-                                <div class="post-inner">
-                                    @foreach($footerproperties as $property)
-                                    <div class="post">
-                                        <figure class="post-thumb"><a href="{{ route('property.show',$property->slug) }}"><img src="{{Storage::url('property/'.$property->image)}}" alt=""></a></figure>
-                                        <h5><a href="{{ route('property.show',$property->slug) }}">{{ str_limit($property->title,40) }}</a></h5>
-                                        <p>: غرف  {{ $property->bedroom }} دورات المياه: {{ $property->bathroom }} </p>
-                                    </div>
-                                    @endforeach
-                
+    <!-- FOOTER AREA START -->
+    <footer class="ltn__footer-area  ">
+        <div class="footer-top-area  section-bg-2 plr--5">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xl-3 col-md-6 col-sm-6 col-12">
+                        <div class="footer-widget footer-about-widget">
+                            <div class="footer-logo">
+                                <div class="site-logo">
+                                    <img src="img/logo-2.png" alt="Logo">
                                 </div>
                             </div>
-                        </div>
-
-                        <div class="col-lg-4 col-md-6 col-sm-12 footer-column mt-5">
-                            <div class="footer-widget links-widget ml-70">
-                                <div class="widget-content">
-                                    
-                                    <div class="team-block-one">
-                                        <div class="inner-box" >
-                                            <figure class="image-box"><img src="assets/images/team/team-3.jpg" alt=""></figure>
-                                            <div class="lower-content">
-                                                <div class="inner" dir="ltr" style="background-color:#1b1d21 !important;">
-                                                    <h3 class="mb-4" style="color:#fff">التواصل الاجتماعي</h3>
-                                                    <ul class="social-links clearfix">
-                                                        <center>
-                                                        <li><a href="https://www.instagram.com/roshemcompany/" target="_blank"><i class="fab fa-instagram" dir="rtl"></i> </a></li>
-                                                        <li><a href="https://www.twitter.com/roshemcompany/" target="_blank"><i class="fab fa-twitter" dir="rtl"></i> </a></li>
-                                                        <li><a href="https://www.snapchat.com/add/roshemcompany" target="_blank"><i class="fab fa-snapchat" dir="rtl"></i></a></li>
-                                                        <li><a href="https://www.tiktok.com/@roshemcompany" target="_blank"><img src="https://d.top4top.io/p_2578y1a0p1.png"></a></li>
-                                                        <li><a href="https://www.facebook.com/people/roshemcompany/100087543796287/" target="_blank"><i class="fab fa-facebook-f" dir="rtl"></i> </a></li>
-
-
-                                                        
-                                                        {{-- <li><a href="index.html"><i class="fab fa-facebook-f"></i></a></li>
-                                                        <li><a href="index.html"><i class="fab fa-twitter"></i></a></li>
-                                                        <li><a href="index.html"><i class="fab fa-google-plus-g"></i></a></li> --}}
-                                                    </center>
-                                                    </ul>
-                                                    <hr>
-                                                    <li><a href="#" target="_blank"> :التواصل <i class="fa fa-phone"></i><br>   0531852852 <br> 0531853853  </a></li>
-                
-                                                </div>
-                                            </div>
+                            <p>Lorem Ipsum is simply dummy text of the and typesetting industry. Lorem Ipsum is dummy text of the printing.</p>
+                            <div class="footer-address">
+                                <ul>
+                                    <li>
+                                        <div class="footer-address-icon">
+                                            <i class="icon-placeholder"></i>
                                         </div>
-                                    </div>      
-
-                                     </div>
+                                        <div class="footer-address-info">
+                                            <p>Brooklyn, New York, United States</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="footer-address-icon">
+                                            <i class="icon-call"></i>
+                                        </div>
+                                        <div class="footer-address-info">
+                                            <p><a href="tel:+0123-456789">+0123-456789</a></p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="footer-address-icon">
+                                            <i class="icon-mail"></i>
+                                        </div>
+                                        <div class="footer-address-info">
+                                            <p><a href="mailto:example@example.com">example@example.com</a></p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="ltn__social-media mt-20">
+                                <ul>
+                                    <li><a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+                                    <li><a href="#" title="Twitter"><i class="fab fa-twitter"></i></a></li>
+                                    <li><a href="#" title="Linkedin"><i class="fab fa-linkedin"></i></a></li>
+                                    <li><a href="#" title="Youtube"><i class="fab fa-youtube"></i></a></li>
+                                </ul>
                             </div>
                         </div>
-
-
-
-
+                    </div>
+                    <div class="col-xl-2 col-md-6 col-sm-6 col-12">
+                        <div class="footer-widget footer-menu-widget clearfix">
+                            <h4 class="footer-title">Company</h4>
+                            <div class="footer-menu">
+                                <ul>
+                                    <li><a href="about.html">About</a></li>
+                                    <li><a href="blog.html">Blog</a></li>
+                                    <li><a href="shop.html">All Products</a></li>
+                                    <li><a href="locations.html">Locations Map</a></li>
+                                    <li><a href="faq.html">FAQ</a></li>
+                                    <li><a href="contact.html">Contact us</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-md-6 col-sm-6 col-12">
+                        <div class="footer-widget footer-menu-widget clearfix">
+                            <h4 class="footer-title">Services</h4>
+                            <div class="footer-menu">
+                                <ul>
+                                    <li><a href="order-tracking.html">Order tracking</a></li>
+                                    <li><a href="wishlist.html">Wish List</a></li>
+                                    <li><a href="login.html">Login</a></li>
+                                    <li><a href="account.html">My account</a></li>
+                                    <li><a href="about.html">Terms & Conditions</a></li>
+                                    <li><a href="about.html">Promotional Offers</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-md-6 col-sm-6 col-12">
+                        <div class="footer-widget footer-menu-widget clearfix">
+                            <h4 class="footer-title">Customer Care</h4>
+                            <div class="footer-menu">
+                                <ul>
+                                    <li><a href="login.html">Login</a></li>
+                                    <li><a href="account.html">My account</a></li>
+                                    <li><a href="wishlist.html">Wish List</a></li>
+                                    <li><a href="order-tracking.html">Order tracking</a></li>
+                                    <li><a href="faq.html">FAQ</a></li>
+                                    <li><a href="contact.html">Contact us</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6 col-sm-12 col-12">
+                        <div class="footer-widget footer-newsletter-widget">
+                            <h4 class="footer-title">Newsletter</h4>
+                            <p>Subscribe to our weekly Newsletter and receive updates via email.</p>
+                            <div class="footer-newsletter">
+                                <form action="#">
+                                    <input type="email" name="email" placeholder="Email*">
+                                    <div class="btn-wrapper">
+                                        <button class="theme-btn-1 btn" type="submit"><i class="fas fa-location-arrow"></i></button>
+                                    </div>
+                                </form>
+                            </div>
+                            <h5 class="mt-30">We Accept</h5>
+                            <img src="img/icons/payment-4.png" alt="Payment Image">
+                        </div>
                     </div>
                 </div>
             </div>
-            @endif
-            <div class="footer-bottom">
-                <div class="auto-container">
-                    <div class="inner-box clearfix">
-                        {{-- <figure class="footer-logo"><a href="{{route('home')}}"><img src="{{asset('frontend/images/logo.png')}}" alt=""></a></figure> --}}
-                        <div class="copyright pull-left">
-                            @if(isset($footersettings[0]) && $footersettings[0]['footer'])
-                            {{ $footersettings[0]['footer'] }}
-                        @else
-                            © 2022 Developer puzzle.
-                        @endif
-                            </div>
-                            <ul class="footer-nav pull-right clearfix">
-                                <li><a href="{{ route('policy') }}">سياسة الخصوصية</a></li>
+        </div>
+        <div class="ltn__copyright-area ltn__copyright-2 section-bg-7  plr--5">
+            <div class="container-fluid ltn__border-top-2">
+                <div class="row">
+                    <div class="col-md-6 col-12">
+                        <div class="ltn__copyright-design clearfix">
+                            <p>All Rights Reserved @ Company <span class="current-year"></span></p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-12 align-self-center">
+                        <div class="ltn__copyright-menu text-right">
+                            <ul>
+                                <li><a href="#">Terms & Conditions</a></li>
+                                <li><a href="#">Claim</a></li>
+                                <li><a href="#">Privacy & Policy</a></li>
                             </ul>
-                                    </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </footer>
+        </div>
+    </footer>
+    <!-- FOOTER AREA END -->
 
-
-        <!-- main-footer end -->
-
-       <!--Scroll to top-->
-        <button class="scroll-top scroll-to-target" data-target="html">
-            <span class="fal fa-angle-up"></span>
-        </button> 
-
-        @if(Request::is('/'))
-
-        <div class="floating-chat text-right">
-            <i class="fa fa-search fa-lg" aria-hidden="true"></i>
-            <div class="chat">
-                <div class="header">
-                    <span class="title">
-                        البحث عن عقار
-                    </span>
-                    <button>
-                        <i class="fa fa-times" aria-hidden="true"></i>
-                    </button>
-                                 
-                </div>
-                <div class="messages">
-                    <form action="{{ route('search')}} " method="GET" class="search-form">
-                        <input name="purpose" type="hidden" value="بيع">
-                        <div class="row clearfix">
-
-                        <div class="col-12 column mb-2">
-                            <div class="form-group">
-                                <div class="select-box">
-                                    <select class="form-control" name="bedroom" class="wide">
-                                       <option value="" disabled selected>عدد الغرف</option>
-                                       @if(isset($bedroomdistinct))
-                                            @foreach($bedroomdistinct as $bedroom)
-                                                <option value="{{$bedroom->bedroom}}">{{$bedroom->bedroom}}</option>
-                                            @endforeach
-                                        @endif
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-12 column mb-2">
-                            <div class="form-group">
-                                <div class="select-box">
-                                    <select class="form-control" name="type" class="wide">
-                                       <option value="" data-display=" نوع العقار" disabled selected>نوع العقار </option>
-                                       <option value="شقة">شقة</option>
-                                       <option value="بيت">بيت</option>
-                                       <option value="ملحق">ملحق</option>
-                                       <option value="عمارة">عمارة</option>
-
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                            <div class="col-12 column">
-                                <div class="form-group">
-                                    <div class="field-input">
-                                        <input class="form-control" type="search" name="city" placeholder="مدينة-منطقة">
+    <!-- MODAL AREA START (Quick View Modal) -->
+    <div class="ltn__modal-area ltn__quick-view-modal-area">
+        <div class="modal fade" id="quick_view_modal" tabindex="-1">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                            <!-- <i class="fas fa-times"></i> -->
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                         <div class="ltn__quick-view-modal-inner">
+                             <div class="modal-product-item">
+                                <div class="row">
+                                    <div class="col-lg-6 col-12">
+                                        <div class="modal-product-img">
+                                            <img src="img/product/4.png" alt="#">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-12">
+                                        <div class="modal-product-info">
+                                            <div class="product-ratting">
+                                                <ul>
+                                                    <li><a href="#"><i class="fas fa-star"></i></a></li>
+                                                    <li><a href="#"><i class="fas fa-star"></i></a></li>
+                                                    <li><a href="#"><i class="fas fa-star"></i></a></li>
+                                                    <li><a href="#"><i class="fas fa-star-half-alt"></i></a></li>
+                                                    <li><a href="#"><i class="far fa-star"></i></a></li>
+                                                    <li class="review-total"> <a href="#"> ( 95 Reviews )</a></li>
+                                                </ul>
+                                            </div>
+                                            <h3><a href="product-details.html">3 Rooms Manhattan</a></h3>
+                                            <div class="product-price">
+                                                <span>$34,900</span>
+                                                <del>$36,500</del>
+                                            </div>
+                                            <hr>
+                                            <div class="modal-product-brief">
+                                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos repellendus repudiandae incidunt quidem pariatur expedita, quo quis modi tempore non.</p>
+                                            </div>
+                                            <div class="modal-product-meta ltn__product-details-menu-1 d-none">
+                                                <ul>
+                                                    <li>
+                                                        <strong>Categories:</strong> 
+                                                        <span>
+                                                            <a href="#">Parts</a>
+                                                            <a href="#">Car</a>
+                                                            <a href="#">Seat</a>
+                                                            <a href="#">Cover</a>
+                                                        </span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="ltn__product-details-menu-2 d-none">
+                                                <ul>
+                                                    <li>
+                                                        <div class="cart-plus-minus">
+                                                            <input type="text" value="02" name="qtybutton" class="cart-plus-minus-box">
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="theme-btn-1 btn btn-effect-1" title="Add to Cart" data-toggle="modal" data-target="#add_to_cart_modal">
+                                                            <i class="fas fa-shopping-cart"></i>
+                                                            <span>ADD TO CART</span>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <!-- <hr> -->
+                                            <div class="ltn__product-details-menu-3">
+                                                <ul>
+                                                    <li>
+                                                        <a href="#" class="" title="Wishlist" data-toggle="modal" data-target="#liton_wishlist_modal">
+                                                            <i class="far fa-heart"></i>
+                                                            <span>Add to Wishlist</span>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="" title="Compare" data-toggle="modal" data-target="#quick_view_modal">
+                                                            <i class="fas fa-exchange-alt"></i>
+                                                            <span>Compare</span>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <hr>
+                                            <div class="ltn__social-media">
+                                                <ul>
+                                                    <li>Share:</li>
+                                                    <li><a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+                                                    <li><a href="#" title="Twitter"><i class="fab fa-twitter"></i></a></li>
+                                                    <li><a href="#" title="Linkedin"><i class="fab fa-linkedin"></i></a></li>
+                                                    <li><a href="#" title="Instagram"><i class="fab fa-instagram"></i></a></li>
+                                                    
+                                                </ul>
+                                            </div>
+                                            <label class="float-right mb-0"><a class="text-decoration" href="product-details.html"><small>View Details</small></a></label>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-
-                        <div class="col-12 column">
-                                <div class="form-group">
-                                    <div class="field-input">
-                                        <input class="form-control" type="search" name="maxprice" placeholder="اعلى سعر مطلوب">
-                                    </div>
-                                </div>
-                            </div>
-
-                            
-                        </div>
-                        
-                <div class="footer">
-                    <button id="sendMessage" class="btn btn-secondary" type="submit"><i class="fas fa-search"></i>  بحث</button>
-                </form>
-            </div>
+                             </div>
+                         </div>
+                    </div>
                 </div>
             </div>
-            @endif
         </div>
     </div>
+    <!-- MODAL AREA END -->
 
+    <!-- MODAL AREA START (Add To Cart Modal) -->
+    <div class="ltn__modal-area ltn__add-to-cart-modal-area">
+        <div class="modal fade" id="add_to_cart_modal" tabindex="-1">
+            <div class="modal-dialog modal-md" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                         <div class="ltn__quick-view-modal-inner">
+                             <div class="modal-product-item">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="modal-product-img">
+                                            <img src="img/product/1.png" alt="#">
+                                        </div>
+                                         <div class="modal-product-info">
+                                            <h5><a href="product-details.html">Brake Conversion Kit</a></h5>
+                                            <p class="added-cart"><i class="fa fa-check-circle"></i>  Successfully added to your Cart</p>
+                                            <div class="btn-wrapper">
+                                                <a href="cart.html" class="theme-btn-1 btn btn-effect-1">View Cart</a>
+                                                <a href="checkout.html" class="theme-btn-2 btn btn-effect-2">Checkout</a>
+                                            </div>
+                                         </div>
+                                         <!-- additional-info -->
+                                         <div class="additional-info d-none">
+                                            <p>We want to give you <b>10% discount</b> for your first order, <br>  Use discount code at checkout</p>
+                                            <div class="payment-method">
+                                                <img src="img/icons/payment.png" alt="#">
+                                            </div>
+                                         </div>
+                                    </div>
+                                </div>
+                             </div>
+                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- MODAL AREA END -->
 
-    <!-- jequery plugins -->
-    <script src="{{asset('frontend/js/jquery.js')}}"></script>
-    <script src="{{asset('frontend/js/popper.min.js')}}"></script>
-    <script src="{{asset('frontend/js/bootstrap.min.js')}}"></script>
-    <script src="{{asset('frontend/js/owl.js')}}"></script>
-    <script src="{{asset('frontend/js/wow.js')}}"></script>
-    <script src="{{asset('frontend/js/validation.js')}}"></script>
-    <script src="{{asset('frontend/js/jquery.fancybox.js')}}"></script>
-    <script src="{{asset('frontend/js/appear.js')}}"></script>
-    <script src="{{asset('frontend/js/scrollbar.js')}}"></script>
-    <script src="{{asset('frontend/js/isotope.js')}}"></script>
-    <script src="{{asset('frontend/js/jquery.nice-select.min.js')}}"></script>
-    <script src="{{asset('frontend/js/jQuery.style.switcher.min.js')}}"></script>
-    <script src="{{asset('frontend/js/jquery-ui.js')}}"></script>
-    <script src="{{asset('frontend/js/jquery.paroller.min.js')}}"></script>
-    <script src="{{asset('frontend/js/nav-tool.js')}}"></script>
+    <!-- MODAL AREA START (Wishlist Modal) -->
+    <div class="ltn__modal-area ltn__add-to-cart-modal-area">
+        <div class="modal fade" id="liton_wishlist_modal" tabindex="-1">
+            <div class="modal-dialog modal-md" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                         <div class="ltn__quick-view-modal-inner">
+                             <div class="modal-product-item">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="modal-product-img">
+                                            <img src="img/product/7.png" alt="#">
+                                        </div>
+                                         <div class="modal-product-info">
+                                            <h5><a href="product-details.html">Brake Conversion Kit</a></h5>
+                                            <p class="added-cart"><i class="fa fa-check-circle"></i>  Successfully added to your Wishlist</p>
+                                            <div class="btn-wrapper">
+                                                <a href="wishlist.html" class="theme-btn-1 btn btn-effect-1">View Wishlist</a>
+                                            </div>
+                                         </div>
+                                         <!-- additional-info -->
+                                         <div class="additional-info d-none">
+                                            <p>We want to give you <b>10% discount</b> for your first order, <br>  Use discount code at checkout</p>
+                                            <div class="payment-method">
+                                                <img src="img/icons/payment.png" alt="#">
+                                            </div>
+                                         </div>
+                                    </div>
+                                </div>
+                             </div>
+                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- MODAL AREA END -->
 
-    <!-- main-js -->
-    <script src="{{asset('frontend/js/script.js')}}"></script>
+</div>
+<!-- Body main wrapper end -->
+
+  
+
