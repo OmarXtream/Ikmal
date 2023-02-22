@@ -1,75 +1,20 @@
-/*
-    Template Name: Quarter
-    Description: Real Estate HTML Template
-    Version: 1.0.0
-*/
-/* Single side border-radius  */
-/* BORDER RADIUS */
-/* user select */
-/* box sizing  */
-/* placeholder */
-/* transition  */
-/* transform */
-/* rotate */
-/* scale */
-/* translate */
-/* translate rotate */
-/* skew */
-/* ============================================================
->>> TABLE OF CONTENTS:
-===============================================================
-# Google fonts
-# Gutter Code 
-# Normalize
-# Typography
-# Custom Class
-# input and button type focus outline disable
-# Form input box
-# Text meant only for screen readers.
-# Transition
+@font-face {
+  font-family: "JF Flat Regular";
+  src: url('../fonts/JF-Flat-regular.eot');
+  src: url('../fonts/JF-Flat-regular.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/JF-Flat-regular.svg#JF Flat Regular') format('svg'),
+  url('../fonts/JF-Flat-regular.woff') format('woff'),
+  url('../fonts/JF-Flat-regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
 
-# Accessibility
-# Globals
-
-# Alignments
-# Clearings
-# Posts and pages
-# Captions
-# Galleries
-# Unit test
-# ScrollUp
-# Owl Carousel 
-# Slick Slider
-# Background Overlay
-# Scrollbar
-# Padding Top
-# Padding Bottom
-# Margin Top
-# Margin Bottom
-# Custom margin Padding
-
-============================================================= */
-/* -------------------------------------
-    Google fonts
-------------------------------------- */
-/* @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Rajdhani:wght@400;500;600;700&display=swap'); */
-/*
-font-family: 'Open Sans', sans-serif;
-font-family: 'Rajdhani', sans-serif;
-*/
-/* @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700&family=Titillium+Web:wght@400;600;700;900&display=swap'); */
-/*
-font-family: 'Nunito Sans', sans-serif;
-font-family: 'Titillium Web', sans-serif;
-*/
+body {
+  font-family: "JF Flat Regular", Arial, sans-serif !important;
+ }
 @import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700&family=Poppins:wght@400;500;600;700;800;900&display=swap");
-/*
-font-family: 'Nunito Sans', sans-serif;
-font-family: 'Poppins', sans-serif;
-*/
-/* ====================================================
-    Gutter Code 
-==================================================== */
+
+
 .ltn__no-gutter > [class*='col-'] {
   /* No padding only for child columns */
   padding-left: 0;
