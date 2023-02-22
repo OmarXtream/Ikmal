@@ -26,7 +26,7 @@
                                             <div class="tab-pane fade active show" id="ltn__form_tab_1_1">
                                                 <div class="car-dealer-form-inner">
                                                     <form action="{{ route('search')}} " method="GET" class="ltn__car-dealer-form-box row">
-                                                        <input name="purpose" type="hidden" value="rent">
+                                                        <input name="purpose" type="hidden" value="ايجار">
                                                         
                                                         <div class="ltn__car-dealer-form-item ltn__custom-icon ltn__icon-car col-lg-3 col-md-6">
                                                             <input class="nice-select" type="text" name="city" placeholder="مدينة-منطقة">
@@ -67,7 +67,7 @@
                                             <div class="tab-pane fade" id="ltn__form_tab_1_2">
                                                 <div class="car-dealer-form-inner">
                                                     <form action="{{ route('search')}} " method="GET" class="ltn__car-dealer-form-box row">
-                                                        <input name="purpose" type="hidden" value="sale">
+                                                        <input name="purpose" type="hidden" value="بيع">
                                                         
                                                         <div class="ltn__car-dealer-form-item ltn__custom-icon ltn__icon-car col-lg-3 col-md-6">
                                                             <input class="nice-select" type="text" name="city" placeholder="مدينة-منطقة">

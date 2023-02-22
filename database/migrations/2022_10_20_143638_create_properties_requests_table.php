@@ -16,16 +16,16 @@ class CreatePropertiesRequestsTable extends Migration
         Schema::create('properties_requests', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->String('email');
+            $table->string('email');
             $table->string('phone');
-            $table->string('type')->nullable();
+            $table->string('type');
 
-            $table->string('city')->nullable();
-            $table->integer('rooms')->nullable();
-            $table->integer('baths')->nullable();
+            $table->string('city');
+            $table->integer('rooms');
+            $table->integer('baths');
 
-            $table->string('min_price')->nullable();
-            $table->string('max_price')->nullable();
+            $table->string('min_price');
+            $table->string('max_price');
 
 
             $table->string('first_district')->nullable();
@@ -34,6 +34,8 @@ class CreatePropertiesRequestsTable extends Migration
             $table->string('Fourth_district')->nullable();
 
             $table->text('details')->nullable();
+
+            $table->text('notes')->nullable();
 
             $table->timestamps();
 

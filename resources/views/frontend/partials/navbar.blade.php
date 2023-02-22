@@ -1,6 +1,11 @@
+@if(Request::is('/'))
 <header class="ltn__header-area ltn__header-5 ltn__header-logo-and-mobile-menu-in-mobile ltn__header-transparent gradient-color-4---">
     <!-- ltn__header-top-area start -->
-    <div class="ltn__header-top-area top-area-color-white d-none">
+   
+@else
+<header class="ltn__header-area ltn__header-5 ltn__header-transparent--- gradient-color-4---">
+    <!-- ltn__header-top-area start -->
+    {{-- <div class="ltn__header-top-area top-area-color-white d-none">
         <div class="container">
             <div class="row">
                 <div class="col-md-7">
@@ -51,7 +56,8 @@
             </div>
         </div>
     </div>
-    <!-- ltn__header-top-area end -->
+    <!-- ltn__header-top-area end -->    --}}
+@endif
     
     <!-- ltn__header-middle-area start -->
     <div class="ltn__header-middle-area ltn__header-sticky ltn__sticky-bg-black">
@@ -73,7 +79,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col header-menu-column menu-color-white">
+                <div class="col header-menu-column @if(Request::is('/')) menu-color-white @endif">
                     <div class="header-menu d-none d-xl-block">
                         <nav>
                             <div class="ltn__main-menu">
@@ -213,6 +219,24 @@
                             </div>
                         </nav>
                     </div>
+                </div>
+                <div class="ltn__header-options ltn__header-options-2 mb-sm-20">
+               
+                    <!-- user-menu -->
+                    <div class="ltn__drop-menu user-menu">
+                        <ul>
+                            <li>
+                                <a href="#"><i class="icon-user"></i></a>
+                                <ul>
+                                    <li><a href="login.html">Sign in</a></li>
+                                    <li><a href="register.html">Register</a></li>
+                                    <li><a href="account.html">My Account</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                 
+                   
                 </div>
                 <div class="ltn__header-options ltn__header-options-2 ">
                     <!-- Mobile Menu Button -->

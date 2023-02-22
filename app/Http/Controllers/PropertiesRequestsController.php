@@ -22,6 +22,7 @@ class PropertiesRequestsController extends Controller
             'name' => $request['name'],
             'phone' => $request['phone'],
             'email' => $request['email'],
+            'email' => $request['email'],
             'type' => $request['type'],
             'city' => $request['city'],
             'rooms' => $request['rooms'],
