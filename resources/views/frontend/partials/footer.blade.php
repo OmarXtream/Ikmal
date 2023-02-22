@@ -1,16 +1,37 @@
+    
+    
+    <!-- CALL TO ACTION START (call-to-action-6) -->
+    <div class="ltn__call-to-action-area call-to-action-6 before-bg-bottom" data-bg="img/1.jpg--">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="call-to-action-inner call-to-action-inner-6 ltn__secondary-bg text-center---">
+                        <div class="coll-to-info text-color-white">
+                            <h1>هل تبحث عن منزل أحلامك؟</h1>
+                        </div>
+                        <div class="btn-wrapper">
+                            <a class="btn btn-effect-3 btn-white" href="{{ route('PropertieRequest') }}">أطلبه الآن <i class="icon-next"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- CALL TO ACTION END -->
+
     <!-- FOOTER AREA START -->
     <footer class="ltn__footer-area  ">
         <div class="footer-top-area  section-bg-2 plr--5">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-xl-3 col-md-6 col-sm-6 col-12">
+                    <div class="col-xl-4 col-md-6 col-sm-6 col-12">
                         <div class="footer-widget footer-about-widget">
                             <div class="footer-logo">
                                 <div class="site-logo">
-                                    <img src="img/logo-2.png" alt="Logo">
+                                    <img src="{{asset('frontend/img/logo-2.png')}}" alt="Logo">
                                 </div>
                             </div>
-                            <p>Lorem Ipsum is simply dummy text of the and typesetting industry. Lorem Ipsum is dummy text of the printing.</p>
+                            <p>تعريف الشركة</p>
                             <div class="footer-address">
                                 <ul>
                                     <li>
@@ -18,7 +39,7 @@
                                             <i class="icon-placeholder"></i>
                                         </div>
                                         <div class="footer-address-info">
-                                            <p>Brooklyn, New York, United States</p>
+                                            <p>الموقع</p>
                                         </div>
                                     </li>
                                     <li>
@@ -49,67 +70,58 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-2 col-md-6 col-sm-6 col-12">
+                    <div class="col-xl-4 col-md-6 col-sm-6 col-12">
                         <div class="footer-widget footer-menu-widget clearfix">
-                            <h4 class="footer-title">Company</h4>
+                            <h4 class="footer-title">القائمة</h4>
                             <div class="footer-menu">
                                 <ul>
-                                    <li><a href="about.html">About</a></li>
-                                    <li><a href="blog.html">Blog</a></li>
-                                    <li><a href="shop.html">All Products</a></li>
-                                    <li><a href="locations.html">Locations Map</a></li>
-                                    <li><a href="faq.html">FAQ</a></li>
-                                    <li><a href="contact.html">Contact us</a></li>
+                                    <li><a href="{{ route('home') }}">الرئيسية</a></li>
+                                    <li><a href="{{ route('property') }}">العقارات</a></li>
+                                    <li><a href="{{ route('PropertieRequest') }}">طلب عقار</a></li>
+                                    <li><a href="{{ route('PropertiesMarkating') }}">تسويق عقار</a></li>
+                                    <li><a href="{{ route('InfoForm') }}">حلول تمويلية</a></li>
+                                    <li><a href="{{ route('blog') }}">المدونة</a></li>
+                                    <li><a href="{{ route('contact') }}">تواصل معنا</a></li>
                                 </ul>
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-2 col-md-6 col-sm-6 col-12">
+                 
+                    <div class="col-xl-4 col-md-6 col-sm-6 col-12">
                         <div class="footer-widget footer-menu-widget clearfix">
-                            <h4 class="footer-title">Services</h4>
+                            <h4 class="footer-title">الحساب الشخصي</h4>
                             <div class="footer-menu">
                                 <ul>
-                                    <li><a href="order-tracking.html">Order tracking</a></li>
-                                    <li><a href="wishlist.html">Wish List</a></li>
-                                    <li><a href="login.html">Login</a></li>
-                                    <li><a href="account.html">My account</a></li>
-                                    <li><a href="about.html">Terms & Conditions</a></li>
-                                    <li><a href="about.html">Promotional Offers</a></li>
-                                </ul>
+                                    @guest
+                                    <li><a href="{{route('login')}}">تسجيل الدخول</a></li>
+                                    <li><a href="{{route('register')}}">تسجيل جديد</a></li>
+                                    @endguest
+                                    @auth
+                                    <li><small>{{Auth::user()->name}}</small></li>
+        
+                                    @if(Auth::user()->role_id == 1)
+                                    <li><a href="{{ route('admin.dashboard') }}">لوحة التحكم</a></li>
+                                    @endif
+                                    <li>
+                                        <a class="dropdownitem indigo-text" href="{{ route('logout') }}"
+                                        onclick="event.preventDefault();
+                                        document.getElementById('logout-form').submit();">
+                                        <i class="material-icons"></i>تسجيل الخروج
+                                        </a>
+            
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                            @csrf
+                                        </form>
+            
+                                        </ul>
+                                    </li>     
+            
+                                    @endauth
+                                        </ul>
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-2 col-md-6 col-sm-6 col-12">
-                        <div class="footer-widget footer-menu-widget clearfix">
-                            <h4 class="footer-title">Customer Care</h4>
-                            <div class="footer-menu">
-                                <ul>
-                                    <li><a href="login.html">Login</a></li>
-                                    <li><a href="account.html">My account</a></li>
-                                    <li><a href="wishlist.html">Wish List</a></li>
-                                    <li><a href="order-tracking.html">Order tracking</a></li>
-                                    <li><a href="faq.html">FAQ</a></li>
-                                    <li><a href="contact.html">Contact us</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-md-6 col-sm-12 col-12">
-                        <div class="footer-widget footer-newsletter-widget">
-                            <h4 class="footer-title">Newsletter</h4>
-                            <p>Subscribe to our weekly Newsletter and receive updates via email.</p>
-                            <div class="footer-newsletter">
-                                <form action="#">
-                                    <input type="email" name="email" placeholder="Email*">
-                                    <div class="btn-wrapper">
-                                        <button class="theme-btn-1 btn" type="submit"><i class="fas fa-location-arrow"></i></button>
-                                    </div>
-                                </form>
-                            </div>
-                            <h5 class="mt-30">We Accept</h5>
-                            <img src="img/icons/payment-4.png" alt="Payment Image">
-                        </div>
-                    </div>
+                
                 </div>
             </div>
         </div>
@@ -118,15 +130,13 @@
                 <div class="row">
                     <div class="col-md-6 col-12">
                         <div class="ltn__copyright-design clearfix">
-                            <p>All Rights Reserved @ Company <span class="current-year"></span></p>
+                            <p>جميع الحقوق محفوظة @ puzzle <span class="current-year"></span></p>
                         </div>
                     </div>
                     <div class="col-md-6 col-12 align-self-center">
                         <div class="ltn__copyright-menu text-right">
                             <ul>
-                                <li><a href="#">Terms & Conditions</a></li>
-                                <li><a href="#">Claim</a></li>
-                                <li><a href="#">Privacy & Policy</a></li>
+                                <li><a href="{{ route('policy') }}">سياسة الخصوصية</a></li>
                             </ul>
                         </div>
                     </div>
