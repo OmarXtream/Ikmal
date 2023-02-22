@@ -184,7 +184,8 @@ body {
 html {
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
-  font-family: var(--ltn__body-font); }
+  font-family: "JF Flat Regular", Arial, sans-serif !important;
+}
 
 * {
   -webkit-box-sizing: border-box;

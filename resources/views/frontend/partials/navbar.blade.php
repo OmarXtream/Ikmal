@@ -3,7 +3,7 @@
     <!-- ltn__header-top-area start -->
    
 @else
-<header class="ltn__header-area ltn__header-5 ltn__header-transparent--- gradient-color-4---">
+<header class="ltn__header-area ltn__header-5 ltn__header-transparent--- gradient-color-4---" style="background-image: url({{asset('frontend/img/bg/14.jpg')}});">
     <!-- ltn__header-top-area start -->
     {{-- <div class="ltn__header-top-area top-area-color-white d-none">
         <div class="container">
