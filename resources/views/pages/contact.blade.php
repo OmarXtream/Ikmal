@@ -6,185 +6,105 @@
 
 @section('content')
 
-<section class="page-title-two bg-color-1 centred">
-    <div class="pattern-layer">
-        <div class="pattern-1" style="background-image: url(frontend/images/shape/shape-9.png);"></div>
-        <div class="pattern-2" style="background-image: url(frontend/images/shape/shape-10.png);"></div>
-    </div>
-    <div class="auto-container">
-        <div class="content-box clearfix">
-            <h1>تواصل معنا</h1>
-            <ul class="bread-crumb clearfix">
-                <li><a href="index.html">الرئيسية</a></li>
-            </ul>
+    <!-- BREADCRUMB AREA START -->
+    <div class="ltn__breadcrumb-area text-left bg-overlay-white-30 bg-image mb-0">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="ltn__breadcrumb-inner">
+                        <h1 class="page-title">تواصل معنا</h1>
+                        <div class="ltn__breadcrumb-list">
+                            <ul>
+                                <li><a href="{{route('home')}}"><span class="ltn__secondary-color"><i class="fas fa-home"></i></span> الرئيسية</a></li>
+                                <li>تواصل معنا</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-</section>
-<hr>
-<section class="contact-section bg-color-1">
-    <div class="auto-container">
-        <div class="row align-items-center clearfix">
-            <div class="col-lg-6 col-md-6 col-sm-12 content-column">
-                <div class="content-box">
-                    <div class="sec-title" style="text-align: center">
-                        <h3><i class="fa fa-handshake" aria-hidden="true"></i></h3>
-                        <h2>دعنا نتواصل معك </h2>
+    <!-- BREADCRUMB AREA END -->
+
+    <div class="ltn__contact-address-area mb-90 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="ltn__contact-address-item ltn__contact-address-item-3 box-shadow">
+                        <div class="ltn__contact-address-icon">
+                            <img src="{{asset('frontend/img/icons/10.png')}}" alt="Icon Image">
+                        </div>
+                        <h3>البريد الإلكتروني</h3>
+                        <p>info@ikmal-sa.com</p>
                     </div>
-                    <div class="form-inner">
+                </div>
+                <div class="col-lg-4">
+                    <div class="ltn__contact-address-item ltn__contact-address-item-3 box-shadow">
+                        <div class="ltn__contact-address-icon">
+                            <img src="{{asset('frontend/img/icons/11.png')}}" alt="Icon Image">
+                        </div>
+                        <h3>رقم الهاتف</h3>
+                        <p>+0123-456789</p>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="ltn__contact-address-item ltn__contact-address-item-3 box-shadow">
+                        <div class="ltn__contact-address-icon">
+                            <img src="{{asset('frontend/img/icons/12.png')}}" alt="Icon Image">
+                        </div>
+                        <h3>العنوان</h3>
+                        <p>شارع العنوان - مدينة العنوان</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="ltn__contact-message-area mb-120 mb-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="ltn__form-box contact-form-box box-shadow white-bg">
+                        <h4 class="title-2">دعنا نتواصل معك</h4>
                         <form id="contact-us" action="" method="POST">
                             @csrf
                             @auth
                             <input type="hidden" name="user_id" value="{{ auth()->id() }}">
                             @endauth
-
-                            <div class="row clearfix">
-                                <div class="col-lg-6 col-md-6 col-sm-12 form-group">
-                                    
-                                    <input type="text" id="name" name="name" placeholder="الإسم" @auth value="{{ auth()->user()->name }}" readonly @endauth required="">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="input-item input-item-name ltn__custom-icon">
+                                        <input type="text" id="name" name="name" placeholder="الإسم" @auth value="{{ auth()->user()->name }}" readonly @endauth required>
+                                    </div>
                                 </div>
-                                <div class="col-lg-6 col-md-6 col-sm-12 form-group">
-                                    <input type="email" id="email" name="email" placeholder="البريد الإلكتروني"  @auth value="{{ auth()->user()->email }}" readonly @endauth required="">
+                                <div class="col-md-6">
+                                    <div class="input-item input-item-email ltn__custom-icon">
+                                        <input type="email" id="email" name="email" placeholder="البريد الإلكتروني"  @auth value="{{ auth()->user()->email }}" readonly @endauth required>
+                                    </div>
                                 </div>
-                                <div class="col-lg-6 col-md-6 col-sm-12 form-group">
-                                    <input type="text" id="phone" name="phone" placeholder="رقم الهاتف" required="">
+                                <div class="col-md-6">
+                                    <div class="input-item input-item-phone ltn__custom-icon">
+                                        <input type="text" id="phone" name="phone" placeholder="رقم الهاتف" required>
+                                    </div>
                                 </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 form-group">
-                                    <textarea id="message" name="message" placeholder="الرسالة"></textarea>
-                                </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 form-group message-btn">
-                                    <button class="theme-btn btn-one float-right" type="submit" id="msgsubmitbtn" name="submit-form">إرسال</button>
-                                </div>
-                                <h1 class="text-center" id="result"></h1>
+                              
+                               
                             </div>
+                            <div class="input-item input-item-textarea ltn__custom-icon">
+                                <textarea id="message" name="message" placeholder="الرسالة"></textarea>
+                            </div>
+                            <div class="btn-wrapper mt-0">
+                                <button class="btn theme-btn-1 btn-effect-1 text-uppercase" type="submit" id="msgsubmitbtn" name="submit-form">إرسال</button>
+                            </div>
+                            <h1 class="text-center" id="result"></h1>
+
+                            <p class="form-messege mb-0 mt-20"></p>
                         </form>
                     </div>
                 </div>
             </div>
-
-            <div class="col-lg-6 col-md-6 col-sm-12 content-column ">
-                <div class="content-box">
-                    <div class="sec-title" style="text-align: center">
-                        <h5><i class="fa fa-lg fa-link"></i></h5>
-                        <h3>تواصل معنا على حساباتنا الرسمية</h3>
-
-                    </div>
-                        <div class="blog-sidebar" style="background-color:transparent !important">
-
-                    <div class="sidebar-widget social-widget" style="background-color:transparent !important">
-                        <ul class="social-links clearfix d-flex justify-content-center">
-                            <li><a href="https://www.facebook.com/people/roshemcompany/100087543796287/"><i class="fab fa-facebook-f"></i></a></li>
-                            <li><a href="https://www.instagram.com/roshemcompany/"><i class="fab fa-instagram"></i></a></li>
-                            <li><a href="https://www.twitter.com/roshemcompany/"><i class="fab fa-twitter"></i></a></li>
-                            <li><a href="https://www.snapchat.com/add/roshemcompany"><i class="fab fa-snapchat"></i></a></li>
-                            <li style="margin-right: 12px !important;"><a href="https://www.tiktok.com/@roshemcompany"><img width="50px" height="50px" src="https://d.top4top.io/p_2578y1a0p1.png"></a></li>
-                        </ul>
-                        <h5 class="mt-2 text-center text-muted"> <br>   <i class="fa fa-phone"></i> 0531852852 <br> <i class="fa fa-phone"></i> 0531853853  </h5>
-                    </div>
-            </div>
-
-    </div>
-
         </div>
     </div>
-</section>
-
-    {{-- <section class="section">
-        <div class="container">
-            <div class="row">
-
-                <div class="col s12 m8">
-                    <div class="contact-content">
-                        <h4 style="text-align: center;" class="contact-title">تواصل معنا</h4>
-
-                        <form id="contact-us" action="" method="POST">
-                            @csrf
-                            <input type="hidden" name="mailto" value="{{ $contactsettings[0]['email'] ?? 'p4alam@gmail.com' }}">
-
-                            @auth
-                                <input type="hidden" name="user_id" value="{{ auth()->id() }}">
-                            @endauth
-
-                            @auth
-                                <div class="input-field col s12">
-                                    <i class="material-icons prefix">person</i>
-                                    <input id="name" name="name" type="text" class="validate" value="{{ auth()->user()->name }}" readonly>
-                                    <label for="name">الإسم</label>
-                                </div>
-                            @endauth
-                            @guest
-                                <div class="input-field col s12">
-                                    <i class="material-icons prefix">person</i>
-                                    <input id="name" name="name" type="text" class="validate">
-                                    <label for="name">الإسم</label>
-                                </div>
-                            @endguest
-
-                            @auth
-                                <div class="input-field col s12">
-                                    <i class="material-icons prefix">mail</i>
-                                    <input id="email" name="email" type="email" class="validate" value="{{ auth()->user()->email }}" readonly>
-                                    <label for="email">البريد الإلكتروني</label>
-                                </div>
-                            @endauth
-                            @guest
-                                <div class="input-field col s12">
-                                    <i class="material-icons prefix">mail</i>
-                                    <input id="email" name="email" type="email" class="validate">
-                                    <label for="email">البريد الإلكتروني</label>
-                                </div>
-                            @endguest
-
-                            <div class="input-field col s12">
-                                <i class="material-icons prefix">phone</i>
-                                <input id="phone" name="phone" type="number" class="validate">
-                                <label for="phone">رقم الهاتف</label>
-                            </div>
-
-                            <div class="input-field col s12">
-                                <i class="material-icons prefix">mode_edit</i>
-                                <textarea id="message" name="message" class="materialize-textarea"></textarea>
-                                <label for="message">الرسالة</label>
-                            </div>
-                            
-                            <button id="msgsubmitbtn" class="btn waves-effect waves-light indigo darken-4 btn-large" type="submit">
-                                <span>إرسال</span>
-                                <i class="material-icons right">send</i>
-                            </button>
-
-                        </form>
-
-                    </div>
-                </div> <!-- /.col -->
-
-                <div class="col s12 m4">
-                    <div class="contact-sidebar">
-                        <div class="m-t-30">
-                            <i class="material-icons left">call</i>
-                            <h6 class="uppercase">إتصل بنا</h6>
-                            @if(isset($contactsettings[0]) && $contactsettings[0]['phone'])
-                                <h6 class="bold m-l-40">{{ $contactsettings[0]['phone'] }}</h6>
-                            @endif
-                        </div>
-                        <div class="m-t-30">
-                            <i class="material-icons left">mail</i>
-                            <h6 class="uppercase">بريدنا الإلكتروني</h6>
-                            @if(isset($contactsettings[0]) && $contactsettings[0]['email'])
-                                <h6 class="bold m-l-40">{{ $contactsettings[0]['email'] }}</h6>
-                            @endif
-                        </div>
-                        <div class="m-t-30">
-                            <i class="material-icons left">map</i>
-                            <h6 class="uppercase">العنوان</h6>
-                            @if(isset($contactsettings[0]) && $contactsettings[0]['address'])
-                                <h6 class="bold m-l-40">{!! $contactsettings[0]['address'] !!}</h6>
-                            @endif
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section> --}}
 
 @endsection
 
