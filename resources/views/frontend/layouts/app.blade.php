@@ -68,5 +68,8 @@
 <!-- Main JS -->
 <script src="{{asset('frontend/js/main.js')}}"></script>
 
+
+@yield('scripts')
+
 </body>
 </html>
