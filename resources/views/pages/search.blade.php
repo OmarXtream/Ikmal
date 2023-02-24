@@ -1,9 +1,5 @@
 @extends('frontend.layouts.app')
 
-@section('styles')
-
-@endsection
-
 @section('content')
 
 <section class="page-title-two bg-color-1 centred">

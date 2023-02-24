@@ -58,96 +58,112 @@
 
 @section('content')
 
-    <section class="section mt-3">
-        <div class="auto-container">
-            <div class="row clearfix">
-                <div class="col-lg-12 col-md-12 col-sm-12 content-side">
-                    <div class="blog-details-content">
-                        <div class="news-block-one">
-                            <div class="inner-box">
-                                <div class="image-box img-fluid" style="height: 100%">
-                                    <figure class="image img-fluid" style="height: 400px;"><img style="height: 100%" src="{{Storage::url('posts/'.$post->image)}}" alt="{{$post->title}}"></figure>
-                                    <span class="category">تدوينة حديثه</span>
-                                </div>
-                                <div class="lower-content">
-                                    <h3 class="text-center">{{$post->title}}</h3>
-                                    <ul class="post-info clearfix">
-                                        <li class="author-box">
-                                            <figure class="author-thumb"><img src="assets/images/news/author-1.jpg" alt=""></figure>
-                                            <h5><a href="javascript:void(0)">{{$post->user->name}}</a></h5>
-                                        </li>
-                                        <li class="ltr">{{$post->created_at->diffForHumans()}}</li>
-                                    </ul>
-                                    <div class="text">
-                                        {!! $post->body !!}
-                                    </div>
-                                    <div class="post-tags">
-                                        <ul class="tags-list clearfix">
-                                            @foreach($post->categories as $key => $category)
-                                                <li class="mx-2"><a href="javascript:void(0)">{{$category->name}}</a></li>
-                                        @endforeach
-                                        @foreach($post->tags as $key => $tag)
-                                            <a class="mx-2" href="{{ route('blog.tags',$tag->slug) }}" class="btn-flat">
-                                                <li><a href="javascript:void(0)">{{$tag->name}}</a></li>
-                                            </a>
-                                        @endforeach
-            
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="comments-area mt-4">
-                            <div class="group-title">
-                                <h4 class="text-right">{{ $post->comments_count }} تعليقات</h4>
-                            </div>
-                            <div class="comment-box">
-                                @foreach($post->comments as $comment)
-    
-                                @if($comment->parent_id == NULL)
 
-                                <div class="comment text-center">
-                                    <figure class="thumb-box">
-                                        <img src="{{ Storage::url('users/'.$comment->users->image) }}" alt="{{ $comment->users->name }}">
-                                    </figure>
-                                    <div class="comment-inner">
-                                        <div class="comment-info clearfix">
-                                            <h5>{{ $comment->users->name }}</h5>
-                                            <span class="ltr">{{ $comment->created_at->diffForHumans() }}</span>
+    <!-- BREADCRUMB AREA START -->
+    <div class="ltn__breadcrumb-area text-left bg-overlay-white-30 bg-image ">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="ltn__breadcrumb-inner">
+                        <h1 class="page-title">{{$post->title}}</h1>
+                        <div class="ltn__breadcrumb-list">
+                            <ul>
+                                <li><a href="{{route('home')}}"><span class="ltn__secondary-color"><i class="fas fa-home"></i></span> الرئيسية</a></li>
+                                <li>{{$post->title}}</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- BREADCRUMB AREA END -->
+
+    <div class="ltn__page-details-area ltn__blog-details-area mb-120">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="ltn__blog-details-wrap">
+                        <div class="ltn__page-details-inner ltn__blog-details-inner">
+                            <div class="ltn__blog-meta">
+                                <ul>
+                            @foreach($post->categories as $key => $category)
+                            <li class="ltn__blog-category">
+                                <a href="#">{{$category->name}}</a>
+                            </li>
+                            @endforeach
+
+                                </ul>
+                            </div>
+                            <h2 class="ltn__blog-title">{{$post->title}}</h2>
+                            <div class="ltn__blog-meta">
+                                <ul>
+                                    <li class="ltn__blog-author">
+                                        <a href="#">{{$post->user->name}}</a>
+                                    </li>
+                                    <li class="ltn__blog-date">
+                                        <i class="far fa-calendar-alt"></i>{{$post->created_at->diffForHumans()}}
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="far fa-comments"></i>{{ $post->comments_count }} تعليق</a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <img src="{{Storage::url('posts/'.$post->image)}}" alt="{{$post->title}}">
+
+                            <div style="overflow-wrap: break-word;">
+                            {!! $post->body !!}
+                            </div>
+                            
+                        </div>
+                  
+                        <hr>
+                        <!-- comment-area -->
+                        <div class="ltn__comment-area mb-50">
+                            <h4 class="title-2">{{ $post->comments_count }} تعليقات</h4>
+                            <div class="ltn__comment-inner">
+                                <ul>
+                                    @foreach($post->comments as $comment)
+    
+                                    @if($comment->parent_id == NULL)
+    
+                                    <li>
+                                        <div class="ltn__comment-item clearfix">
+                                            <div class="ltn__commenter-img">
+                                                <img src="{{ Storage::url('users/'.$comment->users->image) }}" alt="{{ $comment->users->name }}">
+                                            </div>
+                                            <div class="ltn__commenter-comment">
+                                                <h6><a href="#">{{ $comment->users->name }}</a></h6>
+                                                <span class="comment-date">{{ $comment->created_at->diffForHumans() }}</span>
+                                                <p>{{ $comment->body }}</p>
+                                            </div>
                                         </div>
-                                        <div class="text">
-                                            <p>{{ $comment->body }}</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                @endif
-                                @endforeach
+                                    </li>
+                                    @endif
+                                    @endforeach
+    
+                                </ul>
                             </div>
                         </div>
-                        
-                        <div class="comments-form-area mb-5">
-                            <div class="group-title">
-                                <h4 class="text-right">ترك تعليق</h4>
-                            </div>
+                        <hr>
+                        <!-- comment-reply -->
+                        <div class="ltn__comment-reply-area ltn__form-box mb-60---">
+                            <h4 class="title-2">ترك تعليق</h4>
                             @auth
 
                             <form action="{{ route('blog.comment',$post->id) }}" method="post" class="comment-form default-form">
                                 @csrf
                                 <input type="hidden" name="parent" value="0">
 
-                                <div class="row">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 form-group">
-                                        <textarea name="body" placeholder="اكتب تعليقك هنا"></textarea>
-                                    </div>
-
-                                    <div class="col-lg-12 col-md-12 col-sm-12 form-group message-btn">
-                                        <button type="submit" class="theme-btn btn-one">ارسال</button>
-                                    </div>
+                                <div class="input-item input-item-textarea ltn__custom-icon">
+                                    <textarea name="body"  placeholder="اكتب تعليقك هنا...."></textarea>
+                                </div>
+                                <div class="btn-wrapper">
+                                    <button class="btn theme-btn-1 btn-effect-1 text-uppercase" type="submit"><i class="far fa-comments"></i> ارسال</button>
                                 </div>
                             </form>
-
                             @endauth
-    
                             @guest 
                             <div class="text-center">
                                 <a href="{{ route('login') }}">
@@ -157,56 +173,47 @@
                         @endguest
 
                         </div>
-                            <div class="group-title">
-                                <h4 class="text-right">مشاركة المنشور</h4>
-                            </div>
-
-                                <div class ="frame mb-5 mx-auto">
-                                    <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{Request::url()}}" class="share-button">
-                                 <i class="fab fa-facebook-f" style="color: #3b5998;"></i>
-                                </a>
-                                    <a target="_blank" href="https://twitter.com/intent/tweet?text=لا تفوتك هذي التدوينة الرهيبه ! {{Request::url()}}" class="share-button">
-                                  <i class="fab fa-twitter" style="color: #00acee;"></i>
-                                </a>
-                                    <a target="_blank" href="whatsapp://send?text={{Request::url()}}" class="share-button">
-                                 <i class="fab fa-whatsapp" style="color: #ea4c89;"></i>
-                                </a>
-                                    <a target="_blank" href="https://www.linkedin.com/sharing/share-offsite/?url={{Request::url()}}" class="share-button">
-                                 <i class="fab fa-linkedin-in" style="color:#0e76a8;"></i>
-                                </a>
-                                </div>
-                            </div>
-
+                    </div>
                 </div>
-            
+                <div class="col-lg-4">
+                    <aside class="sidebar-area blog-sidebar ltn__right-sidebar">
+                        <!-- Tagcloud Widget -->
+                        <div class="widget ltn__tagcloud-widget">
+                            <h4 class="ltn__widget-title ltn__widget-title-border-2">العناوين المرتبطة</h4>
+                            <ul>
+                                @foreach($post->tags as $key => $tag)
+                                <li>
+                                    <a href="{{ route('blog.tags',$tag->slug) }}">{{$tag->name}}</a>
+                                </li>
+                                @endforeach
+                        </ul>
+                        </div>
+                        <!-- Social Media Widget -->
+                        <div class="widget ltn__social-media-widget">
+                            <h4 class="ltn__widget-title ltn__widget-title-border-2">مشاركة التدوينة</h4>
+                            <div class="ltn__social-media-2 text-center">
+                                <ul>
+                                    <li><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{Request::url()}}" title="فيس بوك"><i class="fab fa-facebook-f"></i></a></li>
+                                    <li><a target="_blank" href="https://twitter.com/intent/tweet?text=لا تفوتك هذي التدوينة الرهيبه ! {{Request::url()}}" title="تويتر"><i class="fab fa-twitter"></i></a></li>
+                                    <li><a target="_blank" href="whatsapp://send?text={{Request::url()}}" title="واتساب"><i class="fab fa-whatsapp"></i></a></li>
+                                
+                                    <li><a target="_blank" href="https://www.linkedin.com/sharing/share-offsite/?url={{Request::url()}}" title="لنكد ان"><i class="fab fa-linkedin"></i></a></li>
+                                    
+                                </ul>
+                            </div>
+                        </div>
+                        
+                    </aside>
+                </div>
             </div>
         </div>
+    </div>
 
-    </section>
+
+
 
 @endsection
 
 @section('scripts')
 
-<script>
-    
-    $(document).on('click','span.right.replay',function(e){
-        e.preventDefault();
-        
-        var commentid = $(this).data('commentid');
-
-        $('#comment-'+commentid).empty().append(
-            `<div class="comment-box">
-                <form action="{{ route('blog.comment',$post->id) }}" method="POST">
-                    @csrf
-                    <input type="hidden" name="parent" value="1">
-                    <input type="hidden" name="parent_id" value="`+commentid+`">
-                    
-                    <textarea name="body" class="box" placeholder="Leave a comment"></textarea>
-                    <input type="submit" class="btn indigo" value="Comment">
-                </form>
-            </div>`
-        );
-    });
-</script>
 @endsection

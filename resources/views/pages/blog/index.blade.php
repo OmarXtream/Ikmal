@@ -1,61 +1,67 @@
 @extends('frontend.layouts.app')
 
-@section('styles')
-<link href="{{asset('frontend/css/styles.css')}}" rel="stylesheet">
-
-@endsection
 
 @section('content')
 
-<section class="page-title centred" style="background-image: url(frontend/images/shape/shape-9.png);">
-    <div class="auto-container">
-        <div class="content-box clearfix">
-            <h1>منشورات المدونة</h1>
-            <ul class="bread-crumb clearfix">
-                <li><a href="/">الرئيسية</a></li>
-            </ul>
+ <!-- BREADCRUMB AREA START -->
+ <div class="ltn__breadcrumb-area text-left bg-overlay-white-30 bg-image" >
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="ltn__breadcrumb-inner">
+                    <h1 class="page-title">منشورات المدونة</h1>
+                    <div class="ltn__breadcrumb-list">
+                        <ul>
+                            <li><a href="{{route('home')}}"><span class="ltn__secondary-color"><i class="fas fa-home"></i></span> الرئيسية</a></li>
+                            <li>منشورات المدونة</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-</section>
+</div>
+<!-- BREADCRUMB AREA END -->
           
+<!-- BLOG AREA START -->
+<div class="ltn__blog-area ltn__blog-item-3-normal mb-100">
+    <div class="container">
+        <div class="row">
+            
+            @forelse($posts as $post)
 
-                            <!-- sidebar-page-container -->
-        <section class="blog-list sec-pad-2">
-            <div class="auto-container">
-                <div class="row clearfix">
-                    @foreach($posts as $post)
-                    <div class="col-lg-6 col-md-12 col-sm-12 news-block">
-                        <div class="news-block-two wow fadeInLeft animated animated" data-wow-delay="00ms" data-wow-duration="1500ms">
-                            <div class="inner-box align-items-center img-fluid">
-                                <div class="image-box img-fluid" style="height: 100%">
-                                    <a href="{{ route('blog.show',$post->slug) }}"><img style="height: 100%" class="img-fluid" src="{{Storage::url('posts/'.$post->image)}}" alt="{{$post->title}}"></a>
-                                </div>
-                                <div class="content-box">
-                                    <h4><a style="color: black !important;" href="{{ route('blog.show',$post->slug) }}">{{ $post->title }}</a></h4>
-                                    <ul class="post-info clearfix">
-                                        <li class="author-box">
-                                            {{-- <figure class="author-thumb"><img src="assets/images/news/author-1.jpg" alt=""></figure> --}}
-                                            <h5 style="color: black !important;"><a style="color: black !important;" href="{{ route('blog.show',$post->slug) }}">{{$post->user->name}}</a></h5>
-                                        </li>
-                                        <li>{{$post->created_at}}</li>
-                                    </ul>
-                                    <div class="btn-box">
-                                        <a href="{{ route('blog.show',$post->slug) }}" class="theme-btn btn-two">تفاصيل أكثر</a>
-                                    </div>
-                                </div>
+            <!-- Blog Item -->
+            <div class="col-lg-4 col-sm-6 col-12">
+                <div class="ltn__blog-item ltn__blog-item-3">
+                    <div class="ltn__blog-img">
+                        <a href="{{ route('blog.show',$post->slug) }}"><img src="{{Storage::url('posts/'.$post->image)}}" alt="{{$post->title}}"></a>
+                    </div>
+                    <div class="ltn__blog-brief">
+                        <h3 class="ltn__blog-title"><a href="{{ route('blog.show',$post->slug) }}">{{$post->title}}</a></h3>
+
+                        <div class="ltn__blog-meta-btn">
+                            <div class="ltn__blog-meta">
+                                <ul>
+                                    <li class="ltn__blog-date"><i class="far fa-calendar-alt"></i>{{$post->created_at->diffForHumans()}}</li>
+                                </ul>
+                            </div>
+                            <div class="ltn__blog-btn">
+                                <a href="{{ route('blog.show',$post->slug) }}">تفاصيل أكثر</a>
                             </div>
                         </div>
                     </div>
-                    @endforeach
-
                 </div>
-                
             </div>
-        </section>
+        
+            @empty
+            <h1 class="text-center mb-5">لا يوجد اي منشورات حالياً</h1>
+            @endforelse
 
-
-@endsection
-
-@section('scripts')
+            <!--  -->
+        </div>
+      
+    </div>
+</div>
+<!-- BLOG AREA END -->
 
 @endsection
