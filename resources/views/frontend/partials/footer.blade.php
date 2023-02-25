@@ -55,7 +55,7 @@
                                             <i class="icon-mail"></i>
                                         </div>
                                         <div class="footer-address-info">
-                                            <p><a href="mailto:example@example.com">example@example.com</a></p>
+                                            <p><a href="mailto:info@ekmal-sa.com">info@ekmal-sa.com</a></p>
                                         </div>
                                     </li>
                                 </ul>

@@ -5,7 +5,7 @@
 @section('content')
 
     <!-- BREADCRUMB AREA START -->
-    <div class="ltn__breadcrumb-area text-left bg-overlay-white-30 bg-image "  data-bg="img/bg/14.jpg">
+    <div class="ltn__breadcrumb-area text-left bg-overlay-white-30 bg-image " >
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">

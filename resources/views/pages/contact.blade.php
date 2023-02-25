@@ -35,7 +35,7 @@
                             <img src="{{asset('frontend/img/icons/10.png')}}" alt="Icon Image">
                         </div>
                         <h3>البريد الإلكتروني</h3>
-                        <p>info@ikmal-sa.com</p>
+                        <p>info@ekmal-sa.com</p>
                     </div>
                 </div>
                 <div class="col-lg-4">
