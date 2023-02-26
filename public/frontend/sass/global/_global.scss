@@ -50,7 +50,6 @@ font-family: 'Titillium Web', sans-serif;
 */
 
 
-@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700&family=Poppins:wght@400;500;600;700;800;900&display=swap');
 /*
 font-family: 'Nunito Sans', sans-serif;
 font-family: 'Poppins', sans-serif;
@@ -121,8 +120,8 @@ font-family: 'Poppins', sans-serif;
     --ltn__heading-color: #071c1f;
     --ltn__paragraph-color: #5C727D;
     
-    --ltn__heading-font: "JF Flat Regular", Arial, sans-serif !important;
-    --ltn__body-font: "JF Flat Regular", Arial, sans-serif !important;
+    --ltn__heading-font: "JF Flat Regular" !important;
+    --ltn__body-font: "JF Flat Regular" !important;
     
     /* Footer ACD2D8 8CB2B2  */
     --ltn__color-1: #8cb2b2; 
@@ -231,7 +230,7 @@ font-family: 'Poppins', sans-serif;
 html {
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
-    font-family: "JF Flat Regular", Arial, sans-serif !important;
+    font-family: "JF Flat Regular" !important;
 }
 * {
     -webkit-box-sizing: border-box;
@@ -248,7 +247,7 @@ body {
     font-weight: 400;
     font-style: normal;
     font-size: 16px;
-    font-family: "JF Flat Regular", Arial, sans-serif !important;
+    font-family: "JF Flat Regular" !important;
     line-height: 1.8;
     margin: 0 auto;
 }

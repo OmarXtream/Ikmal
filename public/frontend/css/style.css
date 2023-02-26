@@ -12,7 +12,6 @@
 body {
   font-family: "JF Flat Regular", Arial, sans-serif !important;
  }
-@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700&family=Poppins:wght@400;500;600;700;800;900&display=swap");
 
 
 .ltn__no-gutter > [class*='col-'] {
@@ -68,8 +67,8 @@ body {
   /* Lighten */
   --ltn__heading-color: #071c1f;
   --ltn__paragraph-color: #5C727D;
-  --ltn__heading-font: 'Poppins', sans-serif;
-  --ltn__body-font: 'Nunito Sans', sans-serif;
+  --ltn__heading-font: 'JF Flat Regular';
+  --ltn__body-font: 'JF Flat Regular';
   /* Footer ACD2D8 8CB2B2  */
   --ltn__color-1: #8cb2b2;
   --ltn__color-2: #ACD2D8;
