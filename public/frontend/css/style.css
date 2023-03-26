@@ -7784,9 +7784,8 @@ ul.wp-block-latest-posts.is-grid.alignwide {
   .property-detail-info-list ul li {
     display: block; }
     .property-detail-info-list ul li label {
-      margin-left: 5px;
       font-weight: 600;
-      min-width: 110px;
+      min-width: 50px;
       display: inline-block; }
     .property-detail-info-list ul li span {
       font-weight: 600;
