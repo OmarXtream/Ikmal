@@ -117,13 +117,13 @@
                         <div class="property-detail-info-list section-bg-1 clearfix mb-60">      
                             
                             <ul>
-                                <li><label>المساحة:</label> <i class="flaticon-square-shape-design-interface-tool-symbol"></i>  <span>{{ $property->area}}</span></li>
-                                <li><label>المدينة:</label> <i class="flaticon-location"></i> <span>{{ $property->city}}</span></li>
+                                <li><label><i class="flaticon-square-shape-design-interface-tool-symbol"></i> المساحة:</label>  <span>{{ $property->area}}</span></li>
+                                <li><label><i class="flaticon-location"></i> المدينة:</label> <span>{{ $property->city}}</span></li>
                                 <li><label>الغرض:</label><span>{{ $property->purpose }}</span></li>
                             </ul>
                             <ul>
-                                <li><label>غرف:</label> <i class="flaticon-bed"></i> <span>{{ $property->bedroom}}</span></li>
-                                <li><label>دورات مياه: </label> <i class="flaticon-clean"></i> <span>{{ $property->bathroom}}</span></li>
+                                <li><label><i class="flaticon-bed"></i>  غرف:</label>  <span>{{ $property->bedroom}}</span></li>
+                                <li><label><i class="flaticon-clean"></i> دورات مياه: </label> <span>{{ $property->bathroom}}</span></li>
                             </ul>
                         </div>
                                         
