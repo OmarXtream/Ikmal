@@ -12571,6 +12571,11 @@ input.cart-plus-minus-box {
 
 .ltn__car-dealer-form-box .ltn__custom-icon.ltn__icon-car .nice-select::before {
   content: "\f1b9"; }
+.ltn__car-dealer-form-box .ltn__custom-icon.ltn__icon-building .nice-select::before {
+    content: "\f1ad"; }
+.ltn__car-dealer-form-box .ltn__custom-icon.ltn__icon-door .nice-select::before {
+      content: "\f52b"; }
+  
 
 .ltn__car-dealer-form-box .ltn__custom-icon.ltn__icon-meter .nice-select::before {
   content: "\f3fd"; }
