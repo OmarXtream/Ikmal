@@ -177,31 +177,11 @@
         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
             <div class="card">
                 <div class="header" style="text-align: right">
-                    <h2>قائمة المستخدمين</h2>
+                    <h2>احصائيات الطلبات الإلكترونية</h2>
                 </div>
                 <div class="body">
-                    <div class="table-responsive">
-                        <table class="table table-hover dashboard-task-infos">
-                            <thead>
-                                <tr>
-                                    <th>#</th>
-                                    <th>الاسم</th>
-                                    <th>البريد الالكتروني</th>
-                                    <th>العضوية</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach($users as $key => $user)
-                                <tr>
-                                    <td>{{ ++$key }}.</td>
-                                    <td>{{ $user->name }}</td>
-                                    <td>{{ $user->email }}</td>
-                                    <td>{{ $user->role->name }}</td>
-                                </tr>
-                                @endforeach
-                            </tbody>
-                        </table>
-                    </div>
+                    <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+
                 </div>
             </div>
         </div>
@@ -258,11 +238,43 @@
 @endsection
 
 @push('scripts')
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+
+<script>
+    var xValues = ["التسويق", "التمويل", "طلب عقار", "التواصل المباشر"];
+    var yValues = [{{ $PropertiesMarkating }}, {{ $InfoFormCount }}, {{ $PropertiesRequestsCount }}, {{ $MessagesCount }}];
+    var barColors = [
+      "#b91d47",
+      "#00aba9",
+      "#2b5797",
+      "#ADD8E6"
+    ];
+    
+    new Chart("myChart", {
+      type: "pie",
+      data: {
+        labels: xValues,
+        datasets: [{
+          backgroundColor: barColors,
+          data: yValues
+        }]
+      },
+      options: {
+        title: {
+          display: true,
+          text: "أنواع الطلبات العقارية"
+        }
+      }
+    });
+    </script>
+    
 
     <!-- Jquery CountTo Plugin Js -->
     <script src="{{ asset('backend/plugins/jquery-countto/jquery.countTo.js') }}"></script>
 
     <!-- Sparkline Chart Plugin Js -->
     <script src="{{ asset('backend/js/pages/index.js') }}"></script>
+
+
 
 @endpush
