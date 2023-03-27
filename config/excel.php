@@ -45,6 +45,7 @@ return [
     'imports'            => [
 
         'read_only' => true,
+        'ignore_empty' => true,
 
         'heading_row' => [
 
