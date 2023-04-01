@@ -26,11 +26,17 @@
                     </a>
                 </li>
 
+                <li class="{{ Request::is('admin/services*') ? 'active' : '' }}">
+                    <a href="{{ route('admin.services.index') }}">
+                        <i class="material-icons">wb_sunny</i>
+                        <span>المميزات</span>
+                    </a>
+                </li>
 
-                <li class="{{ Request::is('admin/InfoForm') ? 'active' : '' }}">
-                    <a href="{{ route('admin.InfoForm') }}">
-                        <i class="material-icons">spa</i>
-                        <span>طلبات التمويل</span>
+                <li class="{{ Request::is('admin/testimonials*') ? 'active' : '' }}">
+                    <a href="{{ route('admin.testimonials.index') }}">
+                        <i class="material-icons">view_carousel</i>
+                        <span>الشهادات</span>
                     </a>
                 </li>
 
@@ -40,12 +46,22 @@
                         <span>خلفية الموقع</span>
                     </a>
                 </li>
+                <li class="header">التحكم العقاري</li>
+
                 <li class="{{ Request::is('admin/properties*') ? 'active' : '' }}">
                     <a href="{{ route('admin.properties.index') }}">
                         <i class="material-icons">home</i>
                         <span>العقارات</span>
                     </a>
                 </li>
+
+                <li class="{{ Request::is('admin/InfoForm') ? 'active' : '' }}">
+                    <a href="{{ route('admin.InfoForm') }}">
+                        <i class="material-icons">spa</i>
+                        <span>طلبات التمويل</span>
+                    </a>
+                </li>
+
                 <li class="{{ Request::is('admin/PRequests*') ? 'active' : '' }}">
                     <a href="{{ route('admin.PropertieRequest') }}">
                         <i class="material-icons">business</i>
@@ -72,19 +88,6 @@
                     </a>
                 </li>
 
-                {{-- <li class="{{ Request::is('admin/services*') ? 'active' : '' }}">
-                    <a href="{{ route('admin.services.index') }}">
-                        <i class="material-icons">wb_sunny</i>
-                        <span>الخدمات</span>
-                    </a>
-                </li> --}}
-
-                <li class="{{ Request::is('admin/testimonials*') ? 'active' : '' }}">
-                    <a href="{{ route('admin.testimonials.index') }}">
-                        <i class="material-icons">view_carousel</i>
-                        <span>الشهادات</span>
-                    </a>
-                </li>
 
                 <li class="header">المدونة</li>
                 <li class="{{ Request::is('admin/categories*') ? 'active' : '' }}">

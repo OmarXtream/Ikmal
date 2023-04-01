@@ -32,7 +32,7 @@
                                     <th>#</th>
                                     <th>العنوان</th>
                                     <th>الوصف</th>
-                                    <th>الايقونة</th>
+                                    {{-- <th>الايقونة</th> --}}
                                     <th>الترتيب</th>
                                     <th width="100px">-</th>
                                 </tr>
@@ -43,9 +43,9 @@
                                     <td>{{$key+1}}</td>
                                     <td>{{$service->title}}</td>
                                     <td>{{$service->description}}</td>
-                                    <td>
+                                    {{-- <td>
                                         <i class="material-icons indigo">{{$service->icon}}</i>
-                                    </td>
+                                    </td> --}}
                                     <td>{{$service->service_order}}</td>
 
                                     <td class="text-center">

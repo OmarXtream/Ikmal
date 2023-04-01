@@ -29,18 +29,18 @@ class ServiceController extends Controller
         $request->validate([
             'title'         => 'required',
             'description'   => 'required|max:200',
-            'icon'          => 'required',
+            // 'icon'          => 'required',
             'service_order' => 'required',
         ]);
 
         $service = new Service();
         $service->title         = $request->title;
         $service->description   = $request->description;
-        $service->icon          = $request->icon;
+        // $service->icon          = $request->icon;
         $service->service_order = $request->service_order;
         $service->save();
 
-        Toastr::success('message', 'Service created successfully.');
+        Toastr::success('message', 'تم إنشاء الميزة بنجاح.');
         return redirect()->route('admin.services.index');
     }
 
@@ -58,18 +58,18 @@ class ServiceController extends Controller
         $request->validate([
             'title'         => 'required',
             'description'   => 'required|max:200',
-            'icon'          => 'required',
+            // 'icon'          => 'required',
             'service_order' => 'required',
         ]);
 
         $service = Service::findOrFail($service->id);
         $service->title         = $request->title;
         $service->description   = $request->description;
-        $service->icon          = $request->icon;
+        // $service->icon          = $request->icon;
         $service->service_order = $request->service_order;
         $service->save();
 
-        Toastr::success('message', 'Service updated successfully.');
+        Toastr::success('message', 'تم تحديث الميزة بنجاح.');
         return redirect()->route('admin.services.index');
     }
 
@@ -79,7 +79,7 @@ class ServiceController extends Controller
         $service = Service::findOrFail($service->id);
         $service->delete();
 
-        Toastr::success('message', 'Service deleted successfully.');
+        Toastr::success('message', 'تم حذف الميزة بنجاح.');
         return back();
     }
 }

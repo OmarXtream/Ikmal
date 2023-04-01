@@ -13,7 +13,7 @@
     <div class="block-header">
         <a href="{{route('admin.services.index')}}" class="waves-effect waves-light btn btn-danger right m-b-15">
             <i class="material-icons left">arrow_back</i>
-            <span>BACK</span>
+            <span>رجوع</span>
         </a>
     </div>
 
@@ -41,13 +41,13 @@
                             </div>
                         </div>
 
-                        <div class="form-group form-float">
+                        {{-- <div class="form-group form-float">
                             <div class="form-line">
                                 <input type="text" name="icon" class="form-control">
                                 <label class="form-label">ايقونة الخدمة</label>
                             </div>
                             <small>To get icons name list just click the link: <a href="https://materializecss.com/icons.html" target="_blank">Materialize Icon</a></small>
-                        </div>
+                        </div> --}}
 
                         <div class="form-group form-float">
                             <div class="form-line">

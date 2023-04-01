@@ -17,7 +17,7 @@ class CreateServicesTable extends Migration
             $table->increments('id');
             $table->string('title');
             $table->text('description');
-            $table->string('icon');
+            $table->string('icon')->nullable();
             $table->integer('service_order')->default(1);
             $table->timestamps();
         });

@@ -208,8 +208,9 @@
             </div>
         </div>
     </div>
-
-    {{-- <div class="ltn__brand-logo-area ltn__brand-logo-1 section-bg-1 pt-110 pb-110 plr--9 d-none---">
+ 
+    {{-- Static Partners Code
+        <div class="ltn__brand-logo-area ltn__brand-logo-1 section-bg-1 pt-110 pb-110 plr--9 d-none---">
         <div class="container-fluid">
             <div class="row ltn__brand-logo-active">
                 <div class="row  ltn__blog-slider-one-active slick-arrow-1 ltn__blog-item-3-normal">
@@ -306,6 +307,21 @@
                             </div>
                         </div>
                     </div>
+
+                    @foreach($services as $service)
+                    <div class="col-lg-3 col-sm-6 col-12">
+                        <div class="ltn__feature-item ltn__feature-item-6">
+                            <div class="ltn__feature-icon">
+                                <span><i class="flaticon-left-quote"></i></span>
+                            </div>
+                            <div class="ltn__feature-info">
+                                <h4><a href="#">{{$service->title}}</a></h4>
+                                <p>{{$service->description}} </p>
+                            </div>
+                        </div>
+                    </div>
+                    @endforeach
+                    
                 </div>
             </div>
         </div>
