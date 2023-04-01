@@ -19,6 +19,13 @@
                         <span>المستخدمين</span>
                     </a>
                 </li>
+                <li class="{{ Request::is('admin/partners') ? 'active' : '' }}">
+                    <a href="{{ route('admin.partners.index') }}">
+                        <i class="material-icons">stars</i>
+                        <span>الشركاء</span>
+                    </a>
+                </li>
+
 
                 <li class="{{ Request::is('admin/InfoForm') ? 'active' : '' }}">
                     <a href="{{ route('admin.InfoForm') }}">

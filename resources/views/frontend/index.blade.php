@@ -179,43 +179,76 @@
             </div>
         </div>
     </div>
+    <div class="ltn__blog-area pt-120 pb-70 section-bg-1">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title-area ltn__section-title-2--- text-center">
+                        <h6 class="section-subtitle section-subtitle-2 ltn__secondary-color">شركائنا</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="row  ltn__blog-slider-one-active slick-arrow-1 ltn__blog-item-3-normal">
+                <!-- Blog Item -->
+                @foreach($partners as $partner)
+                @if(Storage::disk('public')->exists('partners/'.$partner->img))
 
-    <div class="ltn__brand-logo-area ltn__brand-logo-1 section-bg-1 pt-110 pb-110 plr--9 d-none---">
+                <div class="col-lg-12">
+                    <div class="ltn__blog-item ltn__blog-item-3">
+                        <div class="ltn__blog-img">
+                            <img src="{{Storage::url('partners/'.$partner->img)}}" alt="{{$partner->name}}">
+                        </div>
+                    </div>
+                </div>
+                @endif
+
+                @endforeach
+
+                <!--  -->
+            </div>
+        </div>
+    </div>
+
+    {{-- <div class="ltn__brand-logo-area ltn__brand-logo-1 section-bg-1 pt-110 pb-110 plr--9 d-none---">
         <div class="container-fluid">
             <div class="row ltn__brand-logo-active">
+                <div class="row  ltn__blog-slider-one-active slick-arrow-1 ltn__blog-item-3-normal">
+
                 <div class="col-lg-12">
                     <div class="ltn__brand-logo-item">
-                        <img src="{{asset('frontend/partners/1.png')}}" alt="Brand Logo">
+                        <img style="display: block;width: 1500px;height: auto;" src="{{asset('frontend/partners/1.png')}}" alt="Brand Logo">
                     </div>
                 </div>
                 <div class="col-lg-12">
                     <div class="ltn__brand-logo-item">
-                        <img src="{{asset('frontend/partners/2.png')}}" alt="Brand Logo">
+                        <img style="display: block;width: 1500px;height: auto;" src="{{asset('frontend/partners/2.png')}}" alt="Brand Logo">
                     </div>
                 </div>
                 <div class="col-lg-12">
                     <div class="ltn__brand-logo-item">
-                        <img src="{{asset('frontend/partners/3.png')}}" alt="Brand Logo">
+                        <img style="display: block;width: 1500px;height: auto;" src="{{asset('frontend/partners/3.png')}}" alt="Brand Logo">
                     </div>
                 </div>
                 <div class="col-lg-12">
                     <div class="ltn__brand-logo-item">
-                        <img src="{{asset('frontend/partners/4.png')}}" alt="Brand Logo">
+                        <img style="display: block;width: 1500px;height: auto;" src="{{asset('frontend/partners/4.png')}}" alt="Brand Logo">
                     </div>
                 </div>
                 <div class="col-lg-12">
                     <div class="ltn__brand-logo-item">
-                        <img src="{{asset('frontend/partners/5.png')}}" alt="Brand Logo">
+                        <img style="display: block;width: 1500px;height: auto;" src="{{asset('frontend/partners/5.png')}}" alt="Brand Logo">
                     </div>
                 </div>
                 <div class="col-lg-12">
                     <div class="ltn__brand-logo-item">
-                        <img src="{{asset('frontend/partners/6.png')}}" alt="Brand Logo">
+                        <img style="display: block;width: 1500px;height: auto;" src="{{asset('frontend/partners/6.png')}}" alt="Brand Logo">
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</div> --}}
+
 
         <!-- FEATURE AREA START ( Feature - 6) -->
         <div class="ltn__feature-area pt-90 pb-90">

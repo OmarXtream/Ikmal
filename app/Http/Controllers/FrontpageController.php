@@ -8,6 +8,7 @@ use App\Property;
 use App\Service;
 use App\Slider;
 use App\Post;
+use App\partners;
 
 class FrontpageController extends Controller
 {
@@ -15,6 +16,7 @@ class FrontpageController extends Controller
     public function index()
     {
         $sliders        = Slider::latest()->get();
+        $partners        = partners::latest()->get();
         $properties     = Property::latest()->where('featured',1)->with('rating')->withCount('comments')->take(6)->get();
         $Normalproperties = Property::latest()->with('rating')->withCount('comments')->take(6)->get();
 
@@ -22,7 +24,7 @@ class FrontpageController extends Controller
         $testimonials   = Testimonial::latest()->get();
         $posts          = Post::latest()->where('status',1)->take(6)->get();
 
-        return view('frontend.index', compact('sliders','properties','services','testimonials','posts','Normalproperties'));
+        return view('frontend.index', compact('partners','sliders','properties','services','testimonials','posts','Normalproperties'));
     }
 
 
