@@ -134,7 +134,7 @@
                                 <li>
                                     <div class="property-detail-feature-list-item">
                                         @if(Storage::disk('public')->exists('features/'.$feature->icon))
-                                        <img src="{{Storage::url('features/'.$feature->icon)}}" alt="{{$feature->name}}">
+                                        <img src="{{Storage::url('features/'.$feature->icon)}}" width="32px" height="32px" alt="{{$feature->name}}">
                                         @endif
                                         <div>
                                             <h6>{{$feature->name}}</h6>
