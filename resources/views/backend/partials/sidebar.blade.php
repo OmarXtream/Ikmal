@@ -19,6 +19,14 @@
                         <span>المستخدمين</span>
                     </a>
                 </li>
+
+                <li class="{{ Request::is('admin/fullcalender') ? 'active' : '' }}">
+                    <a href="{{ route('admin.fullcalender.index') }}">
+                        <i class="material-icons">blur_linear</i>
+                        <span>الاجندة والملاحظات</span>
+                    </a>
+                </li>
+
                 <li class="{{ Request::is('admin/partners') ? 'active' : '' }}">
                     <a href="{{ route('admin.partners.index') }}">
                         <i class="material-icons">stars</i>

@@ -115,6 +115,10 @@ Route::group(['prefix'=>'admin','namespace'=>'Admin','middleware'=>['auth','admi
     Route::post('userCreate','UsersController@createUser')->name('userCreate.send');
 
     Route::post('postsIMG', 'PostController@upload')->name('posts.upload.image');
+
+    Route::get('fullcalender', 'FullCalenderController@index')->name('fullcalender.index');
+    Route::post('fullcalenderAjax', 'FullCalenderController@ajax')->name('fullcalender.create');
+
 });
 
 Route::group(['prefix'=>'agent','namespace'=>'Agent','middleware'=>['auth','agent'],'as'=>'agent.'], function(){
