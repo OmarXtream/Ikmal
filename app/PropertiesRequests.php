@@ -8,4 +8,9 @@ class PropertiesRequests extends Model
 {
     protected $fillable = ['name','phone','email','type','city','rooms','baths','min_price','max_price','first_district','Second_district','Third_district','Fourth_district','details'];
 
+
+    public function clientInfo()
+    {
+        return $this->hasOne(ClientInfo::class,'request_id');
+    }
 }

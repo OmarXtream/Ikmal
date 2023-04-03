@@ -40,7 +40,7 @@
                                     <th>الحي الرابع</th>
 
                                     <th width="100px">التفاصيل</th>
-                                    <th width="150">ملاحظات وإنهاء</th>
+                                    <th width="150">إدارة متقدمة</th>
 
                                 </tr>
                             </thead>
@@ -76,6 +76,12 @@
 
                                                 <button type="submit" class="btn btn-danger btn-sm waves-effect mt-2"><i class="material-icons">delete</i></button>                                          
                                             </form>
+                                            @if(empty($rq->clientInfo))
+                                            <a href="{{route('admin.clientinfo.create',['type'=> 2, 'orderID'=>$rq->id])}}" class="btn btn-primary btn-sm waves-effect">
+                                            <i class="material-icons">offline_pin</i>
+                                            </a>
+                                            @endif
+
                                     </td>
 
                                 </tr>

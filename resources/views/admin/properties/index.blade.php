@@ -73,13 +73,14 @@
                                         @endif
                                     </td>
 
-                                    <td class="text-center">
+                                    <d class="text-center">    
                                         <a href="{{route('admin.properties.show',$property->slug)}}" class="btn btn-success btn-sm waves-effect">
                                             <i class="material-icons">visibility</i>
                                         </a>
                                         <a href="{{route('admin.properties.edit',$property->slug)}}" class="btn btn-info btn-sm waves-effect">
                                             <i class="material-icons">edit</i>
                                         </a>
+
                                         <button type="button" class="btn btn-danger btn-sm waves-effect" onclick="deletePost({{$property->id}})">
                                             <i class="material-icons">delete</i>
                                         </button>

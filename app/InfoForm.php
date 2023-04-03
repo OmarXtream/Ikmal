@@ -38,5 +38,10 @@ class InfoForm extends Model
           }
     }
 
+    public function clientInfo()
+    {
+        return $this->hasOne(ClientInfo::class,'fund_id');
+    }
+
 
 }

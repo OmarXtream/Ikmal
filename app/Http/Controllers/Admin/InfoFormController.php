@@ -10,7 +10,7 @@ class InfoFormController extends Controller
 {
     public function index()
     {
-        $infos = InfoForm::get(); 
+        $infos = InfoForm::with('clientInfo')->get(); 
 
         return view('admin.infoForm', compact('infos'));
     }

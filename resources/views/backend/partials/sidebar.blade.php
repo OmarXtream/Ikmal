@@ -56,6 +56,13 @@
                 </li>
                 <li class="header">التحكم العقاري</li>
 
+                <li class="{{ Request::is('admin/clientinfo*') ? 'active' : '' }}">
+                    <a href="{{ route('admin.clientinfo.index') }}">
+                        <i class="material-icons">offline_pin</i>
+                        <span>إدارة العميل</span>
+                    </a>
+                </li>
+
                 <li class="{{ Request::is('admin/properties*') ? 'active' : '' }}">
                     <a href="{{ route('admin.properties.index') }}">
                         <i class="material-icons">home</i>

@@ -22,6 +22,7 @@
                         <table class="table table-bordered table-striped table-hover dataTable js-exportable">
                             <thead>
                                 <tr>
+                                    <th>#</th>
                                     <th>الإسم</th>
                                     <th>رقم الهاتف</th>
                                     <th>البريد الإلكتروني</th>
@@ -32,11 +33,13 @@
                                     <th>الراتب</th>
                                     <th>مدعوم من سكني</th>
                                     <th width="100px">الملاحظات</th>
+                                    <th>إدارة متقدمة</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @foreach($infos as $info)
                                 <tr>
+                                    <td>{{$info->id}}</td>
                                     <td>{{$info->name}}</td>
                                     <td>{{$info->phone}}</td>
                                     <td>{{$info->email}}</td>
@@ -48,7 +51,16 @@
                                     <td>{{$info->salary}}</td>
                                     <td>{{$info->SupportText()}}</td>
                                     <td col="2">{{$info->notes}}</td>
-
+                                    <td>
+                                        @if(empty($info->clientInfo))
+                                        <a href="{{route('admin.clientinfo.create',['type'=> 1, 'orderID'=>$info->id])}}" class="btn btn-info btn-sm waves-effect">
+                                        <i class="material-icons">offline_pin</i>
+                                        </a>
+                                        @else
+                                        -  
+                                        @endif
+                                    </td>
+                                    
                                 </tr>
                                 @endforeach
                             </tbody>
