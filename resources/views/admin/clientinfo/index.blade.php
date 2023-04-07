@@ -11,6 +11,12 @@
 
 @section('content')
 
+<div class="block-header">
+    <a href="{{route('admin.clientinfo.CreateClient')}}" class="waves-effect waves-light btn right m-b-15 addbtn">
+        <i class="material-icons left">add</i>
+        <span>إنشاء طلب عميل </span>
+    </a>
+</div>
    
 
     <div class="row clearfix">
@@ -61,7 +67,7 @@
                                     <td>{{$info->id}}</td>
                                     <td>    
                                         @if($info->type == 1)
-                                        <a href="{{ route('admin.InfoForm') }}">الطلب التمويلي رقم 
+                                        <a onclick="openModel('req-{{$info->id}}')">الطلب التمويلي رقم 
                                         @else
                                         <a href="{{ route('admin.PropertieRequest') }}">الطلب العقاري رقم
                                         @endif
@@ -97,8 +103,79 @@
                                         </form>
                                     </td>
                                 </tr>
+
+                                <div class="modal fade" id="req-{{$info->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                      <div class="modal-content">
+                                        <div class="modal-header">
+                                          <h5 class="modal-title" id="exampleModalLabel">{{$info->request->name}}</h5>
+                                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                          </button>
+                                        </div>
+                                        <div class="modal-body" dir="rtl">
+                                          
+                                            <div class="auto-container">
+                                                <div class="row align-items-center clearfix">
+                    
+                                            <div class="col-lg-12 col-md-12 col-sm-12 form-group">
+                                                <h5 class="text-center">بيانات الطلب</h5>
+                                                <label class="fieldlabels">الإسم</label> 
+                                                <input type="text" class="form-control" value="{{$info->request->name}}" disabled>
+                                                
+                                                <label class="fieldlabels">رقم الهاتف</label> 
+                                                <input type="text" class="form-control" value="{{$info->request->phone}}" disabled>
+
+
+                                                <label class="fieldlabels">البريد الالكتروني</label> 
+                                                <input type="text" class="form-control" value="{{$info->request->email}}" disabled>
+
+
+                                                <label class="fieldlabels">العمر</label> 
+                                                <input type="text" class="form-control" value="{{$info->request->Age}}" disabled>
+
+                                                <label class="fieldlabels">القطاع</label> 
+                                                <input type="text" class="form-control" value="{{$info->request->typeText()}}" disabled>
+
+                                                <label class="fieldlabels">الالتزامات الشخصية</label> 
+                                                <input type="text" class="form-control" value="{{$info->request->commitments}}" disabled>
+
+                                                <label class="fieldlabels">البنك</label> 
+                                                <input type="text" class="form-control" value="{{$info->request->bank}}" disabled>
+
+                                                <label class="fieldlabels">الراتب الاساسي</label> 
+                                                <input type="text" class="form-control" value="{{$info->request->salary}}" disabled>
+
+                                                <label class="fieldlabels">الراتب الصافي</label> 
+                                                <input type="text" class="form-control" value="{{$info->request->salaryTotal}}" disabled>
+
+                                                <label class="fieldlabels">بدل السكن</label> 
+                                                <input type="text" class="form-control" value="{{$info->request->homeAllowance}}" disabled>
+
+                                                <label class="fieldlabels">بدلات اخرى</label> 
+                                                <input type="text" class="form-control" value="{{$info->request->Allowances}}" disabled>
+
+
+                                                <label class="fieldlabels">مدعوم من سكني</label> 
+                                                <input type="text" class="form-control" value="{{$info->request->SupportText()}}" disabled>
+
+                                                <label class="fieldlabels">تفاصيل إضافية</label> 
+                                                <textarea id="notes" name="notes" class="form-control" disabled>{{$info->request->notes}}</textarea>
+
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                        </div>
+                                    
+                                      </div>
+                                    </div>
+                                  </div>
+
                                 @empty
                                 <h2 class="text-center">لا يوجد اي طلب حالياً</h2>
+
                                 @endforelse
                             </tbody>
                         </table>
@@ -149,7 +226,14 @@
                 }
             })
         }
+
+        
     </script>
 
+<script>
+    function openModel(id){
+        $("#"+id).modal('show');
+        }
 
+    </script>
 @endpush

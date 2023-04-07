@@ -187,4 +187,91 @@ class ClientInfoController extends Controller
         return redirect()->route('admin.clientinfo.index');
     }
 
+
+    public function CreateClient()
+    {
+        return view('admin.clientinfo.CreateClient');
+    }
+
+
+
+    public function StoreClient(Request $request)
+    {
+
+        $request->validate([
+            'name' => ['bail','required', 'string', 'max:255'],
+            'email' => ['bail','required', 'string','email', 'max:255'],
+            'phone' => ['bail', 'required'],
+            'type' => ['bail', 'required', 'integer','between:1,3'],
+            'supported' => ['bail','required', 'integer','between:1,2'],
+            'monthly' => 'string|max:255',
+            'timeLeft' => 'string|max:255',
+            'paymentLeft' => 'string|max:255',
+            'Bank' => 'string|max:255',
+            'property' => 'string|max:255',
+            'dateToVisit' => 'date',
+            'payCheckFile' => 'mimes:pdf,docx',
+        ]);
+
+
+        $Form = InfoForm::create([
+            'name' => $request['name'],
+            'email' => $request['email'],
+            'phone' => $request['phone'],
+            'Age' => $request['Age'],
+            'type' => $request['type'],
+            'commitments' => $request['commitments'],
+            'bank' => $request['bank'],
+            'salary' => $request['salary'],
+            'salaryTotal' => $request['salaryTotal'],
+            'homeAllowance' => $request['homeAllowance'],
+            'Allowances' => $request['Allowances'],
+            'supported' => $request['supported'],
+            'notes' => $request['notes'],
+            ]);
+
+
+
+            $clientInfo = new ClientInfo();
+            $clientInfo->fund_id = $Form->id;
+            $clientInfo->type = 1; // infoForm
+
+            $clientInfo->monthly = $request->monthly;
+            $clientInfo->timeLeft = $request->timeLeft;
+            $clientInfo->paymentLeft = $request->paymentLeft;
+            $clientInfo->Bank = $request->Bank;
+            $clientInfo->property = $request->property;
+            $clientInfo->dateToVisit = $request->dateToVisit;
+    
+            $clientInfo->bank1 = $request->bank1;
+            $clientInfo->bank2 = $request->bank2;
+            $clientInfo->bank3 = $request->bank3;
+            $clientInfo->bank4 = $request->bank4;
+            $clientInfo->bank5 = $request->bank5;
+            $clientInfo->bank6 = $request->bank6;
+            $clientInfo->bank7 = $request->bank7;
+    
+            $clientInfo->details = $request->details;
+    
+            $payCheckFile = $request->file('payCheckFile');
+
+            if(isset($payCheckFile)){
+                $currentDate = Carbon::now()->toDateString();
+                $fileName = $currentDate.'-'.uniqid().'.'.$payCheckFile->getClientOriginalExtension();
+    
+                if(!Storage::disk('public')->exists('clientInfo')){
+                    Storage::disk('public')->makeDirectory('clientInfo');
+                }
+                Storage::disk('public')->put('clientInfo/'.$fileName, file_get_contents($payCheckFile));
+                $clientInfo->payCheckFile = $fileName;
+    
+            } 
+    
+    
+    
+            $clientInfo->save();
+            Toastr::success('message', 'تم الإنشاء بنجاح.');
+            return redirect()->route('admin.clientinfo.index');
+
+    }
 }
