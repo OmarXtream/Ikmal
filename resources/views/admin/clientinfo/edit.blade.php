@@ -86,6 +86,48 @@
                         </div>
 
                         <div class="form-group">
+                            <label for="details">تفاصيل طلب العميل</label>
+                            <textarea name="details" class="summary-ckeditor">{{$clientinfo->details}}</textarea>
+                        </div>
+
+                        
+                        <div class="form-group">
+                            <label for="bank1">بنك الاهلي</label>
+                            <textarea name="bank1" class="summary-ckeditor">{{$clientinfo->bank1}}</textarea>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="bank2">الراجحي</label>
+                            <textarea name="bank2" class="summary-ckeditor">{{$clientinfo->bank2}}</textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="bank3">البلاد</label>
+                            <textarea name="bank3" class="summary-ckeditor">{{$clientinfo->bank3}}</textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="bank4">بنك ساب</label>
+                            <textarea name="bank4" class="summary-ckeditor">{{$clientinfo->bank4}}</textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="bank5">الإنماء</label>
+                            <textarea name="bank5" class="summary-ckeditor">{{$clientinfo->bank5}}</textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="bank6">دار التمليك</label>
+                            <textarea name="bank6" class="summary-ckeditor">{{$clientinfo->bank6}}</textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="bank7">بداية</label>
+                            <textarea name="bank7" class="summary-ckeditor">{{$clientinfo->bank7}}</textarea>
+                        </div>
+
+                        <div class="form-group">
                             <label class="form-label">حالة الطلب</label>
 
                             <select style="border: 1px solid #333333" name="status" class="form-control show-tick">
@@ -115,7 +157,11 @@
 
 
 @push('scripts')
+<script src="https://cdn.ckeditor.com/4.16.2/standard/ckeditor.js"></script>
 
+<script>
+    CKEDITOR.replaceAll( 'summary-ckeditor'); 
+</script> 
 
 
 @endpush

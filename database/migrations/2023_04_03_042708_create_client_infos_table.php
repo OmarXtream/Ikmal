@@ -31,6 +31,16 @@ class CreateClientInfosTable extends Migration
             $table->foreign('request_id')->references('id')->on('properties_requests')->onDelete('cascade');
             $table->unique(['fund_id','request_id']);
 
+            $table->text('bank1')->nullable();
+            $table->text('bank2')->nullable();
+            $table->text('bank3')->nullable();
+            $table->text('bank4')->nullable();
+            $table->text('bank5')->nullable();
+            $table->text('bank6')->nullable();
+            $table->text('bank7')->nullable();
+            
+            $table->text('details')->nullable();
+
             $table->timestamps();
 
         });

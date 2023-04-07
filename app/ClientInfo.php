@@ -6,7 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class ClientInfo extends Model
 {
-    protected $fillable = ['type','fund_id','request_id','status','monthly','timeLeft','paymentLeft','payCheckFile','Bank','property','dateToVisit'];
+    protected $fillable = ['type','fund_id','request_id','status','monthly',
+    'timeLeft','paymentLeft','payCheckFile','Bank','property','dateToVisit',
+    'bank1','bank2','bank3','bank4','bank5','bank6','bank7','details',
+];
 
 
     public function request()

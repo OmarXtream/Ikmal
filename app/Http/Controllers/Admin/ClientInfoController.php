@@ -63,6 +63,17 @@ class ClientInfoController extends Controller
         $clientInfo->Bank = $request->Bank;
         $clientInfo->property = $request->property;
         $clientInfo->dateToVisit = $request->dateToVisit;
+
+        $clientInfo->bank1 = $request->bank1;
+        $clientInfo->bank2 = $request->bank2;
+        $clientInfo->bank3 = $request->bank3;
+        $clientInfo->bank4 = $request->bank4;
+        $clientInfo->bank5 = $request->bank5;
+        $clientInfo->bank6 = $request->bank6;
+        $clientInfo->bank7 = $request->bank7;
+
+        $clientInfo->details = $request->details;
+
         if($request->type == 1){
 
             $ClientRequest = InfoForm::findOrFail($request->orderID);
@@ -113,6 +124,16 @@ class ClientInfoController extends Controller
             'dateToVisit' => 'date',
             'payCheckFile' => 'mimes:pdf,docx',
             'status' => 'required|integer|between:1,4',
+
+            'bank1' => 'string|max:255',
+            'bank2' => 'string|max:255',
+            'bank3' => 'string|max:255',
+            'bank4' => 'string|max:255',
+            'bank5' => 'string|max:255',
+            'bank6' => 'string|max:255',
+            'bank7' => 'string|max:255',
+            'details' => 'string|max:255',
+
         ]);
 
 
@@ -124,6 +145,17 @@ class ClientInfoController extends Controller
         $clientInfo->property = $request->property;
         $clientInfo->dateToVisit = $request->dateToVisit;
         $clientInfo->status = $request->status;
+
+        $clientInfo->bank1 = $request->bank1;
+        $clientInfo->bank2 = $request->bank2;
+        $clientInfo->bank3 = $request->bank3;
+        $clientInfo->bank4 = $request->bank4;
+        $clientInfo->bank5 = $request->bank5;
+        $clientInfo->bank6 = $request->bank6;
+        $clientInfo->bank7 = $request->bank7;
+
+        $clientInfo->details = $request->details;
+
 
         $payCheckFile = $request->file('payCheckFile');
 
