@@ -127,9 +127,39 @@
     
                 <div class="col-md-6">
                     <div class="input-item">
-                        <input id="salary" placeholder="الراتب" value="{{ old('salary') }}" name="salary" type="text" class="form-control @if ($errors->has('salary')) is-invalid @endif">
+                        <input id="salary" placeholder="الراتب الاساسي " value="{{ old('salary') }}" name="salary" type="text" class="form-control @if ($errors->has('salary')) is-invalid @endif">
                         @if ($errors->has('salary'))
                         <span class="text-danger">{{ $errors->first('salary') }}</span>
+                        @endif
+
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="input-item">
+                        <input id="salaryTotal" placeholder="الراتب الصافي" value="{{ old('salaryTotal') }}" name="salaryTotal" type="text" class="form-control @if ($errors->has('salaryTotal')) is-invalid @endif">
+                        @if ($errors->has('salaryTotal'))
+                        <span class="text-danger">{{ $errors->first('salaryTotal') }}</span>
+                        @endif
+
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="input-item">
+                        <input id="homeAllowance" placeholder="بدل السكن" value="{{ old('homeAllowance') }}" name="homeAllowance" type="text" class="form-control @if ($errors->has('homeAllowance')) is-invalid @endif">
+                        @if ($errors->has('homeAllowance'))
+                        <span class="text-danger">{{ $errors->first('homeAllowance') }}</span>
+                        @endif
+
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="input-item">
+                        <input id="Allowances" placeholder="بدلات اخرى" value="{{ old('Allowances') }}" name="Allowances" type="text" class="form-control @if ($errors->has('Allowances')) is-invalid @endif">
+                        @if ($errors->has('Allowances'))
+                        <span class="text-danger">{{ $errors->first('Allowances') }}</span>
                         @endif
 
                     </div>

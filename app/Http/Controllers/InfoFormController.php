@@ -27,6 +27,9 @@ class InfoFormController extends Controller
             'commitments' => $request['commitments'],
             'bank' => $request['bank'],
             'salary' => $request['salary'],
+            'salaryTotal' => $request['salaryTotal'],
+            'homeAllowance' => $request['homeAllowance'],
+            'Allowances' => $request['Allowances'],
             'supported' => $request['supported'],
             'notes' => $request['notes'],
             ]);

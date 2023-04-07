@@ -25,6 +25,10 @@ class CreateInfoFormsTable extends Migration
             $table->String('commitments')->nullable();
             $table->String('bank')->nullable();
             $table->String('salary')->nullable();
+            
+            $table->String('salaryTotal')->nullable();
+            $table->String('homeAllowance')->nullable();
+            $table->String('Allowances')->nullable();
 
             $table->integer('supported')->comment('1 => no , 2=> yes ')->nullable();
 

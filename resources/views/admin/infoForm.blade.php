@@ -30,7 +30,11 @@
                                     <th>القطاع</th>
                                     <th>الإلتزامات الشخصية</th>
                                     <th>البنك</th>
-                                    <th>الراتب</th>
+                                    <th>الراتب الاساسي</th>
+                                    <th>الراتب الصافي</th>
+                                    <th>بدل السكن</th>
+                                    <th>بدلات اخرى</th>
+
                                     <th>مدعوم من سكني</th>
                                     <th width="100px">الملاحظات</th>
                                     <th>إدارة متقدمة</th>
@@ -49,6 +53,10 @@
                                     <td>{{$info->commitments}}</td>
                                     <td>{{$info->bank}}</td>
                                     <td>{{$info->salary}}</td>
+                                    <td>{{$info->salaryTotal}}</td>
+                                    <td>{{$info->homeAllowance}}</td>
+                                    <td>{{$info->Allowances}}</td>
+
                                     <td>{{$info->SupportText()}}</td>
                                     <td col="2">{{$info->notes}}</td>
                                     <td>
