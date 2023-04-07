@@ -73,7 +73,7 @@
                                                             <input class="nice-select" type="text" name="city" placeholder="مدينة-منطقة">
                                                             
                                                         </div> 
-                                                        <div class="ltn__car-dealer-form-item ltn__custom-icon ltn__icon-car col-lg-2 col-md-6">
+                                                        <div class="ltn__car-dealer-form-item ltn__custom-icon ltn__icon-building col-lg-2 col-md-6">
                                                             <select name="type" class="nice-select">
                                                                 <option value="شقة">شقة</option>
                                                                 <option value="بيت">بيت</option>
@@ -86,7 +86,7 @@
                                                             
                                                         </div> 
 
-                                                        <div class="ltn__car-dealer-form-item ltn__custom-icon ltn__icon-meter col-lg-2 col-md-6">
+                                                        <div class="ltn__car-dealer-form-item ltn__custom-icon ltn__icon-door col-lg-2 col-md-6">
                                                             <select  name="bedroom" class="nice-select">
                                                                 <option value="" disabled selected>عدد الغرف</option>
                                                                 @if(isset($bedroomdistinct))
