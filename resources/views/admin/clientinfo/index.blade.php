@@ -40,6 +40,7 @@
                                     <th>ملف تعريف الراتب </th>
                                     <th>البنك</th>
                                     <th>العقار</th>
+                                    <th>المندوب</th>
                                     <th>موعد المعاينة</th>
                                     <th>-</th>
 
@@ -57,6 +58,7 @@
                                     <th>ملف تعريف الراتب </th>
                                     <th>البنك</th>
                                     <th>العقار</th>
+                                    <th>المندوب</th>
                                     <th>موعد المعاينة</th>
                                     <th>-</th>
                                 </tr>
@@ -87,6 +89,7 @@
 
                                     <td>{{$info->Bank}}</td>
                                     <td>{{$info->property}}</td>
+                                    <td>{{@$info->delegate->name}}</td>
                                     <td>{{$info->dateToVisit}}</td>
 
 

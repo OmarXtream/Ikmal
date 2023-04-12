@@ -366,6 +366,21 @@ p {
                                                         <input type="text" name="Bank" class="form-control">
                                                     </div>
                                                 </div>
+
+                                                <div class="form-group form-float">
+                                                    <div class="form-line">
+                                                        <label class="fieldlabels">المندوب العقاري</label>
+
+                                                        <select name="delegate" class=" show-tick">
+                                                            <option value="">-- اختر --</option>
+                                                            @foreach($delegates as $delegate)
+                                                            <option value="{{$delegate->id}}" >{{$delegate->name}}</option>
+                                                            @endforeach
+                                                        </select>
+                                                                                    
+                                                    </div>
+                                                </div>
+
                                                 <div class="form-group form-float">
                                                     <div class="form-line">
                                                         <label class="fieldlabels">العقار المختار من العميل</label>

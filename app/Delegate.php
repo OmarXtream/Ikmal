@@ -12,4 +12,12 @@ class Delegate extends Model
         'district', 
     ];
 
+
+    public function clientOrders()
+    {
+        return $this->hasMany(ClientInfo::class);
+    }
+
+    
+
 }

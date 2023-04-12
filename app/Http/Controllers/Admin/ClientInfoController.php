@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\ClientInfo;
 use App\PropertiesRequests;
 use App\InfoForm;
+use App\Delegate;
 
 use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Facades\Image;
@@ -17,7 +18,7 @@ class ClientInfoController extends Controller
 {
     public function index()
     {
-        $infos = ClientInfo::get(); 
+        $infos = ClientInfo::with('delegate')->get(); 
 
         return view('admin.clientinfo.index', compact('infos'));
     }
@@ -109,8 +110,9 @@ class ClientInfoController extends Controller
     public function edit($id)
     {
         $clientinfo = ClientInfo::find($id);
+        $delegates = Delegate::get();
 
-        return view('admin.clientinfo.edit',compact('clientinfo'));
+        return view('admin.clientinfo.edit',compact('clientinfo','delegates'));
     }
 
     public function update(Request $request, $id)
@@ -132,6 +134,7 @@ class ClientInfoController extends Controller
             'bank5' => 'nullable|string|max:255',
             'bank6' => 'nullable|string|max:255',
             'bank7' => 'nullable|string|max:255',
+            'delegate' => 'nullable|integer|exists:delegates,id',
             'details' => 'nullable|string|max:255',
 
         ]);
@@ -153,6 +156,8 @@ class ClientInfoController extends Controller
         $clientInfo->bank5 = $request->bank5;
         $clientInfo->bank6 = $request->bank6;
         $clientInfo->bank7 = $request->bank7;
+
+        $clientInfo->delegate_id = $request->delegate;
 
         $clientInfo->details = $request->details;
 
@@ -190,7 +195,8 @@ class ClientInfoController extends Controller
 
     public function CreateClient()
     {
-        return view('admin.clientinfo.CreateClient');
+        $delegates = Delegate::get();
+        return view('admin.clientinfo.CreateClient',compact('delegates'));
     }
 
 
@@ -211,6 +217,8 @@ class ClientInfoController extends Controller
             'property' => 'nullable|string|max:255',
             'dateToVisit' => 'nullable|date',
             'payCheckFile' => 'nullable|mimes:pdf,docx',
+            'delegate' => 'nullable|integer|exists:delegates,id',
+
         ]);
 
 
@@ -251,6 +259,9 @@ class ClientInfoController extends Controller
             $clientInfo->bank6 = $request->bank6;
             $clientInfo->bank7 = $request->bank7;
     
+
+            $clientInfo->delegate_id = $request->delegate;
+
             $clientInfo->details = $request->details;
     
             $payCheckFile = $request->file('payCheckFile');

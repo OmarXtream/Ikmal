@@ -12,6 +12,11 @@ class ClientInfo extends Model
 ];
 
 
+    public function delegate()
+    {
+        return $this->belongsTo(Delegate::class);
+    }
+
     public function request()
     {
         if($this->type == 1){

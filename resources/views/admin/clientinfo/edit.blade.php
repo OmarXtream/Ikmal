@@ -141,6 +141,17 @@
 
                         </div>
 
+                        <div class="form-group">
+                                <label class="form-label">المندوب العقاري</label>
+
+                                <select style="border: 1px solid #333333" name="delegate" class="form-control show-tick">
+                                    <option value="">-- اختر --</option>
+                                    @foreach($delegates as $delegate)
+                                    <option value="{{$delegate->id}}" {{ $clientinfo->delegate_id == $delegate->id ? 'selected' : '' }}>{{$delegate->name}}</option>
+                                    @endforeach
+                                </select>
+                                                            
+                        </div>
 
                         <button type="submit" class="btn btn-indigo btn-lg m-t-15 waves-effect">
                             <i class="material-icons">update</i>

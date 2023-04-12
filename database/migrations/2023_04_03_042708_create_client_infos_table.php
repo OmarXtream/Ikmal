@@ -39,6 +39,9 @@ class CreateClientInfosTable extends Migration
             $table->text('bank6')->nullable();
             $table->text('bank7')->nullable();
             
+            $table->integer('delegate_id')->unsigned()->nullable();
+            $table->foreign('delegate_id')->references('id')->on('delegates')->onDelete('cascade');
+
             $table->text('details')->nullable();
 
             $table->timestamps();
