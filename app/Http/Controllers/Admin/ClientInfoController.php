@@ -43,13 +43,13 @@ class ClientInfoController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'monthly' => 'string|max:255',
-            'timeLeft' => 'string|max:255',
-            'paymentLeft' => 'string|max:255',
-            'Bank' => 'string|max:255',
-            'property' => 'string|max:255',
-            'dateToVisit' => 'date',
-            'payCheckFile' => 'mimes:pdf,docx',
+            'monthly' => 'nullable|string|max:255',
+            'timeLeft' => 'nullable|string|max:255',
+            'paymentLeft' => 'nullable|string|max:255',
+            'Bank' => 'nullable|string|max:255',
+            'property' => 'nullable|string|max:255',
+            'dateToVisit' => 'nullable|date',
+            'payCheckFile' => 'nullable|mimes:pdf,docx',
             'type' => 'required|integer|between:1,2',
             'orderID' => 'required|integer'
         ]);
@@ -116,23 +116,23 @@ class ClientInfoController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'monthly' => 'string|max:255',
-            'timeLeft' => 'string|max:255',
-            'paymentLeft' => 'string|max:255',
-            'Bank' => 'string|max:255',
-            'property' => 'string|max:255',
-            'dateToVisit' => 'date',
-            'payCheckFile' => 'mimes:pdf,docx',
+            'monthly' => 'nullable|string|max:255',
+            'timeLeft' => 'nullable|string|max:255',
+            'paymentLeft' => 'nullable|string|max:255',
+            'Bank' => 'nullable|string|max:255',
+            'property' => 'nullable|string|max:255',
+            'dateToVisit' => 'nullable|date',
+            'payCheckFile' => 'nullable|mimes:pdf,docx',
             'status' => 'required|integer|between:1,4',
 
-            'bank1' => 'string|max:255',
-            'bank2' => 'string|max:255',
-            'bank3' => 'string|max:255',
-            'bank4' => 'string|max:255',
-            'bank5' => 'string|max:255',
-            'bank6' => 'string|max:255',
-            'bank7' => 'string|max:255',
-            'details' => 'string|max:255',
+            'bank1' => 'nullable|string|max:255',
+            'bank2' => 'nullable|string|max:255',
+            'bank3' => 'nullable|string|max:255',
+            'bank4' => 'nullable|string|max:255',
+            'bank5' => 'nullable|string|max:255',
+            'bank6' => 'nullable|string|max:255',
+            'bank7' => 'nullable|string|max:255',
+            'details' => 'nullable|string|max:255',
 
         ]);
 
@@ -204,13 +204,13 @@ class ClientInfoController extends Controller
             'phone' => ['bail', 'required'],
             'type' => ['bail', 'required', 'integer','between:1,3'],
             'supported' => ['bail','required', 'integer','between:1,2'],
-            'monthly' => 'string|max:255',
-            'timeLeft' => 'string|max:255',
-            'paymentLeft' => 'string|max:255',
-            'Bank' => 'string|max:255',
-            'property' => 'string|max:255',
-            'dateToVisit' => 'date',
-            'payCheckFile' => 'mimes:pdf,docx',
+            'monthly' => 'nullable|string|max:255',
+            'timeLeft' => 'nullable|string|max:255',
+            'paymentLeft' => 'nullable|string|max:255',
+            'Bank' => 'nullable|string|max:255',
+            'property' => 'nullable|string|max:255',
+            'dateToVisit' => 'nullable|date',
+            'payCheckFile' => 'nullable|mimes:pdf,docx',
         ]);
 
 
