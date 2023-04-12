@@ -69,6 +69,8 @@ Route::group(['prefix'=>'admin','namespace'=>'Admin','middleware'=>['auth','admi
     Route::get('CreateClient','ClientInfoController@CreateClient')->name('clientinfo.CreateClient');
     Route::post('CreateClient','ClientInfoController@StoreClient')->name('clientinfo.CreateClient.store');
 
+    Route::resource('delegates','DelegateController');
+
     Route::resource('properties','PropertyController');
     Route::post('properties/gallery/delete','PropertyController@galleryImageDelete')->name('gallery-delete');
 

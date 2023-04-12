@@ -70,6 +70,14 @@
                     </a>
                 </li>
 
+                <li class="{{ Request::is('admin/delegates*') ? 'active' : '' }}">
+                    <a href="{{ route('admin.delegates.index') }}">
+                        <i class="material-icons">face</i>
+                        <span>المناديب</span>
+                    </a>
+                </li>
+
+
                 <li class="{{ Request::is('admin/InfoForm') ? 'active' : '' }}">
                     <a href="{{ route('admin.InfoForm') }}">
                         <i class="material-icons">spa</i>
