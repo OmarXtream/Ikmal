@@ -135,7 +135,7 @@ class PropertyController extends Controller
             }
         }
 
-        Toastr::success('message', 'Property created successfully.');
+        Toastr::success('message', 'تم إنشاء العقار بنجاح.');
         return redirect()->route('admin.properties.index');
     }
 
