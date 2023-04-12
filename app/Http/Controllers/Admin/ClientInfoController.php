@@ -203,7 +203,7 @@ class ClientInfoController extends Controller
             'email' => ['bail','required', 'string','email', 'max:255'],
             'phone' => ['bail', 'required'],
             'type' => ['bail', 'required', 'integer','between:1,3'],
-            'supported' => ['bail','required', 'integer','between:1,2'],
+            'supported' => ['bail','nullable', 'integer','between:1,2'],
             'monthly' => 'nullable|string|max:255',
             'timeLeft' => 'nullable|string|max:255',
             'paymentLeft' => 'nullable|string|max:255',
