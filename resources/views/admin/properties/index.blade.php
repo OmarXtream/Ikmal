@@ -73,7 +73,7 @@
                                         @endif
                                     </td>
 
-                                    <d class="text-center">    
+                                    <td class="text-center">    
                                         <a href="{{route('admin.properties.show',$property->slug)}}" class="btn btn-success btn-sm waves-effect">
                                             <i class="material-icons">visibility</i>
                                         </a>
