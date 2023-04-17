@@ -4,7 +4,7 @@
         <div class="navbar-header">
             <a href="javascript:void(0);" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false"></a>
             <a href="javascript:void(0);" class="bars"></a>
-            <a class="navbar-brand" href="{{ route('admin.dashboard') }}">إكمال</a>
+            <a class="navbar-brand" href="{{ route('admin.dashboard') }}"><i class="material-icons">business</i> إكمال </a>
         </div>
 
         <div class="collapse navbar-collapse" id="navbar-collapse">
@@ -46,7 +46,7 @@
                 <li class="dropdown">
                     <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button">
                         {{-- <img src="{{Storage::url('users/'.auth()->user()->image)}}" alt="{{ auth()->user()->name }}" width="24" height="24"> --}}
-                        <span class="label uppercase">{{ strtok(Auth::user()->name, " ") }}</span>
+                        <span class="label uppercase">{{ strtok(Auth::user()->name, " ") }} <i class="material-icons">person_pin</i></span>
                     </a>
                     <ul class="dropdown-menu pull-right">
                         <li>

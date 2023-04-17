@@ -14,12 +14,27 @@
     </div>
 
     <!-- Widgets -->
+    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+        <div class="card">
+            <div class="header" style="text-align: center">
+                <h2><i class="material-icons">dashboard</i> مرحباً بك في لوحة التحكم الإدارية</h2>
+            </div>
+            <div class="body text-center">
+
+                <img src="{{asset('backend/images/welcome.png')}}" alt="welcome" width="300px" height="200px">
+
+            </div>
+        </div>
+    </div>
+
+
+
     <div class="row clearfix">
-      
+
         <div class="col-lg-2 col-md-2 col-sm-6 col-xs-12">
-            <div class="info-box bg-pink hover-expand-effect">
+            <div class="info-box bg-blue hover-expand-effect">
                 <div class="icon">
-                    <i class="material-icons">playlist_add_check</i>
+                    <i class="material-icons">location_city</i>
                 </div>
                 <div class="content">
                     <div class="text">عدد العقارات</div>
@@ -91,7 +106,7 @@
         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
             <div class="card">
                 <div class="header" style="text-align: right">
-                    <h2>آخر العقارات</h2>
+                    <h2><i class="material-icons">location_city</i> آخر العقارات</h2>
                 </div>
                 <div class="body">
                     <div class="table-responsive">
@@ -177,7 +192,7 @@
         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
             <div class="card">
                 <div class="header" style="text-align: right">
-                    <h2>احصائيات الطلبات الإلكترونية</h2>
+                    <h2><i class="material-icons">filter_list</i> احصائيات الطلبات الإلكترونية</h2>
                 </div>
                 <div class="body">
                     <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
