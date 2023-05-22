@@ -116,6 +116,11 @@
 
                                     @if(Auth::user()->role_id == 1)
                                     <li><a href="{{ route('admin.dashboard') }}">لوحة التحكم</a></li>
+
+                                    @elseif(Auth::user()->role_id == 2)
+                                    <li><a href="{{ route('agent.properties.index') }}">عقاراتي</a></li>
+                                    <li><a href="{{ route('agent.properties.create') }}">إنشاء عقار</a></li>
+
                                     @endif
                                     <li>
                                         <a class="dropdownitem indigo-text" href="{{ route('logout') }}"

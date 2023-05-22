@@ -183,10 +183,18 @@ class PagesController extends Controller
             'message'   => 'required'
         ]);
 
-        Message::create($request->all());
+        
+        Message::create([
+            'agent_id'  => 1,
+            'property_id'  => $request->property_id,
+            'name'      => $request->name,
+            'email'     => $request->email,
+            'phone'     => $request->phone,
+            'message'   => $request->message
+        ]);
 
         if($request->ajax()){
-            return response()->json(['message' => 'Message send successfully.']);
+            return response()->json(['message' => 'تم إرسال الرسالة بنجاح.']);
         }
 
     }

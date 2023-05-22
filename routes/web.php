@@ -130,6 +130,9 @@ Route::group(['prefix'=>'admin','namespace'=>'Admin','middleware'=>['auth','admi
 Route::group(['prefix'=>'agent','namespace'=>'Agent','middleware'=>['auth','agent'],'as'=>'agent.'], function(){
 
     Route::resource('properties','PropertyController');
+
+    
+    Route::resource('properties','PropertyController');
     Route::post('properties/gallery/delete','PropertyController@galleryImageDelete')->name('gallery-delete');
 
 });

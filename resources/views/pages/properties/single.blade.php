@@ -185,7 +185,7 @@
                                 <input type="text" name="name" placeholder="الإسم" required>
                                 <input type="email" name="email" placeholder="البريد الإلكتروني" required>
                                 <input type="text" name="phone" placeholder="رقم الهاتف" required>
-                                <textarea name="message" placeholder="ملاحظة إضافية.."></textarea>
+                                <textarea name="message" placeholder="الرسالة"></textarea>
                                 <button id="msgsubmitbtn" type="submit" class="btn theme-btn-1 message-btn">إرسال الطلب</button>
                             </form>
                         </div>

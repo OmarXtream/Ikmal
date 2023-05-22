@@ -12,17 +12,20 @@
             <div class="row">
                 <div class="col s12 m9">
 
-                    <h4 class="agent-title text-center">قائمة العقارات</h4>
+                    <h4 class="agent-title text-center my-5">قائمة عقاراتي</h4>
                     
                     <div class="agent-content">
+                            <div class="ltn__myaccount-tab-content-inner">
+                                <div class="table-responsive">
+
                         <table class="striped responsive-table table">
                             <thead>
                                 <tr>
-                                    <th scope="col">SL.</th>
+                                    <th scope="col">#</th>
                                     <th scope="col">العنوان</th>
                                     <th scope="col">النوع</th>
                                     <th scope="col">المدينة</th>
-                                    <th scope="col">تنفيذ</th>
+                                    <th scope="col">-</th>
                                 </tr>
                             </thead>
                     
@@ -39,12 +42,12 @@
                                         <td>{{ ucfirst($property->type) }}</td>
                                         <td>{{ ucfirst($property->city) }}</td>
     
-                                        <td class="center">
-                                            <a href="{{route('property.show',$property->slug)}}" target="_blank" class="btn btn-small green waves-effect">
-                                                <i class="material-icons">visibility</i>
+                                        <td>
+                                            <a href="{{route('property.show',$property->slug)}}" target="_blank">
+                                                <i class="fa fa-eye" aria-hidden="true" title="معاينة"></i>
                                             </a>
-                                            <button type="button" class="btn btn-small deep-orange accent-3 waves-effect" onclick="deleteProperty({{$property->id}})">
-                                                <i class="material-icons">delete</i>
+                                            <button type="button" class="btn btn-sm" onclick="deleteProperty({{$property->id}})">
+                                                <i class="fa fa-times text-danger" aria-hidden="true" title="حذف"></i>
                                             </button>
                                             <form action="{{route('agent.properties.destroy',$property->slug)}}" method="POST" id="del-property-{{$property->id}}" style="display:none;">
                                                 @csrf
@@ -63,6 +66,10 @@
                 </div>
 
             </div>
+
+        </div>
+
+            </div>
         </div>
     </section>
 
@@ -73,18 +80,18 @@
     <script>
         function deleteProperty(id){
             swal({
-            title: 'Are you sure?',
-            text: "You won't be able to revert this!",
+            title: 'هل انت متاكد؟',
+            text: "لا يمكنك استرجاع البيانات بعد الحذف",
             icon: 'warning',
             buttons: true,
             dangerMode: true,
-            buttons: ["Cancel", "Yes, delete it!"]
+            buttons: ["تراجع", "تأكيد الحذف"]
             }).then((value) => {
                 if (value) {
                     document.getElementById('del-property-'+id).submit();
                     swal(
-                    'Deleted!',
-                    'Property has been deleted.',
+                    'تم التنفيذ',
+                    'تم الحذف بنجاح.',
                     'success',
                     {
                         buttons: false,

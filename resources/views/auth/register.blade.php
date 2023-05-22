@@ -38,6 +38,10 @@
                         @endif
                         <input type="password" id="password_confirmation" type="password" name="password_confirmation" required placeholder="تأكيد كلمة المرور*">
 
+                        <label class="checkbox-inline">
+                            التسجيل ك مُسوق عقاري
+                        </label>
+                        <input type="checkbox" name="agent" class="filled-in" />
                        
                         <label class="checkbox-inline">
                             بالنقر فوق "إنشاء حساب" ، ف انت توافق على <a href="{{ route('policy') }}">سياسة الخصوصية</a>                        

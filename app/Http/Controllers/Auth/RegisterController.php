@@ -65,7 +65,7 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         $username   = strtok($data['name'], " "); 
-        $roleid     = 3;
+        $roleid     = isset($data['agent']) ? 2 : 3;
 
         return User::create([
             'name'      => $data['name'],
