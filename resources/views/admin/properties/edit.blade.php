@@ -149,8 +149,20 @@
                             </select>
                         </div>
                     </div>
+                    <div class="form-group form-float">
+                        <div class="form-line {{$errors->has('status') ? 'focused error' : ''}}">
+                            <label>اختر الحالة</label>
+                            <select name="status" class="form-control show-tick">
+                                <option value="">-- اختر --</option>
+                                <option value="متاح" {{ $property->status== 'متاح' ? 'selected' : '' }}>متاح</option>
+                                <option value="محجوز" {{ $property->status== 'محجوز' ? 'selected' : '' }}>محجوز</option>
+                                <option value="مباع" {{ $property->status== 'مباع' ? 'selected' : '' }}>مباع</option>
 
-                    <h5>Features</h5>
+                            </select>
+                        </div>
+                    </div>
+
+                    <h5>الخصائص العقارية</h5>
                     <div class="form-group demo-checkbox">
                         @foreach($features as $feature)
                             <input type="checkbox" id="features-{{$feature->id}}" name="features[]" class="filled-in chk-col-indigo" value="{{$feature->id}}" 

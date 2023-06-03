@@ -53,6 +53,8 @@ class PropertyController extends Controller
             'image'     => 'required|mimes:jpeg,jpg,png',
             'floor_plan'=> 'mimes:jpeg,jpg,png',
             'description'        => 'required',
+            'status' => 'required|in:متاح,محجوز,مباع',
+
           //  'location_latitude'  => 'required',
             // 'location_longitude' => 'required',
         ]);
@@ -100,6 +102,7 @@ class PropertyController extends Controller
         $property->city_slug= str_slug($request->city);
         $property->address  = $request->address;
         $property->area     = $request->area;
+        $property->status         = $request->status;
 
         if(isset($request->featured)){
             $property->featured = true;
@@ -176,6 +179,8 @@ class PropertyController extends Controller
             'image'     => 'mimes:jpeg,jpg,png',
             'floor_plan'=> 'mimes:jpeg,jpg,png',
             'description'        => 'required',
+            'status' => 'required|in:متاح,محجوز,مباع',
+
          //   'location_latitude'  => 'required',
            // 'location_longitude' => 'required'
         ]);
@@ -234,6 +239,7 @@ class PropertyController extends Controller
         $property->city_slug    = str_slug($request->city);
         $property->address      = $request->address;
         $property->area         = $request->area;
+        $property->status         = $request->status;
 
         if(isset($request->featured)){
             $property->featured = true;

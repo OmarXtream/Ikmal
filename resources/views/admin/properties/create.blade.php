@@ -147,6 +147,19 @@
                         </div>
                     </div>
 
+                    <div class="form-group form-float">
+                        <div class="form-line {{$errors->has('status') ? 'focused error' : ''}}">
+                            <label>اختر الحالة</label>
+                            <select name="status" class="form-control show-tick">
+                                <option value="">-- اختر --</option>
+                                <option value="متاح" @if(old('status') == 'متاح') selected @endif>متاح</option>
+                                <option value="محجوز" @if(old('status') == 'محجوز') selected @endif>محجوز</option>
+                                <option value="مباع" @if(old('status') == 'مباع') selected @endif>مباع</option>
+
+                            </select>
+                        </div>
+                    </div>
+
                     <h5>خصائص عقارية</h5>
                     <div class="form-group demo-checkbox">
                         @foreach($features as $feature)
