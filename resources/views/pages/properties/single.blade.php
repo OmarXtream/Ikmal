@@ -88,6 +88,10 @@
                     <div class="ltn__shop-details-inner ltn__page-details-inner mb-60">
                         <div class="ltn__blog-meta">
                             <ul>
+                                <li class="ltn__blog-category">
+                                    <a class="bg-dark" href="#">{{$property->status}}</a>
+                                </li>
+
                                 @if($property->featured == 1)
                                 <li class="ltn__blog-category">
                                     <a href="#">مميز</a>

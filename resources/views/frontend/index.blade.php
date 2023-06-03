@@ -27,9 +27,9 @@
                                 <div class="product-badge">
                                 <ul>
                                 @if($property->purpose == 'ايجار')
-                                <li class="sale-badg bg-green">للإيجار</li>
+                                <li class="sale-badg bg-green">{{$property->status}} -  للإيجار</li>
                                 @else
-                                <li class="sale-badg bg-green---">للبيع</li>
+                                <li class="sale-badg bg-green---">{{$property->status}} - للبيع</li>
                                 @endif
                                 </ul>
                             </div>
